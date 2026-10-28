@@ -54,10 +54,10 @@ ScholarDirect-MCP, FastMCP arka plan araçlarını **Academic Research Guardian*
 | **1. Kaynak Arama & Tarama** | **~120.000 token**<br>*(Ham HTML sayfaları, doğrulanamayan PDF'ler, ölü linkler)* | **~3.500 token**<br>*(Sadece onaylı OpenAlex + DergiPark özet tablosu)* | **-%97,1** |
 | **2. Makale Uygunluk Puanlama** | **~85.000 token**<br>*(Sohbette konu ve metot hakkında tahmin yürütme)* | **~2.200 token**<br>*(Bilgisayarda hızlı Python matematiği; kesin karar)* | **-%97,4** |
 | **3. Literatür Boşluğu Analizi** | **~90.000 token**<br>*(Grafiksiz, genel ve yüzeysel sohbet önerileri)* | **~2.500 token**<br>*(Masaüstüne kaydedilen 300-DPI grafik ve Word raporu)* | **-%97,2** |
-| **4. Ampirik Veri & Betimsel İstatistik** | **~180.000 token**<br>*(Sohbete ham tablo yapıştırma; hatalı hesaplar)* | **~3.000 token**<br>*(Dünya Bankası API çekimi; yerel Scipy APA matrisi)* | **-%98,3** |
+| **4. Ampirik Veri & İstatistik** | **~180.000 token**<br>*(Sohbete ham tablo yapıştırma; hatalı hesaplar)* | **~3.000 token**<br>*(Dünya Bankası API çekimi; yerel Scipy APA matrisi)* | **-%98,3** |
 | **5. Ekonometrik Modelleme** | **~250.000 token**<br>*(Sohbette 15+ tur Python hata ayıklama ve kod düzeltme)* | **~3.500 token**<br>*(Yerel `statsmodels`/`lifelines` çalıştırması; tanı testleri)* | **-%98,6** |
-| **6. Makale Taslağı Yazımı** | **~220.000 token**<br>*(Turnitin %60+ benzerliğini kırmak için defalarca yeniden yazma)* | **~18.000 token**<br>*(İlk seferde doğal akademik dilde Word çıktısı)* | **-%91,8** |
-| **Toplam Harcanan Bağlam Tokenı** | **~945.000 token** | **~32.700 token** | **-%96,5 Toplam Tasarruf** |
+| **6. Makale Taslağı Yazımı** | **~220.000 token**<br>*(Turnitin %60+ benzerliğini aşmak için defalarca yeniden yazma)* | **~18.000 token**<br>*(İlk seferde doğal akademik dilde Word çıktısı)* | **-%91,8** |
+| **Toplam Harcanan Token** | **~945.000 token** | **~32.700 token** | **-%96,5 Tasarruf** |
 
 ---
 
@@ -66,7 +66,7 @@ ScholarDirect-MCP, FastMCP arka plan araçlarını **Academic Research Guardian*
 | Özellik | Normal ChatGPT / Claude | Ücretli Akademik Siteler (30-100$/ay) | ScholarDirect-MCP |
 |---|---|---|---|
 | **Kaynak Doğruluğu** | ❌ Olmayan makaleler uydurabilir. | ⚠️ Yalnızca anlaşmalı dergileri gösterir. | ✅ **%100 Gerçek:** Crossref ile kontrol edilmiş gerçek makaleler. |
-| **Türkiye Literatürü (DergiPark)** | ❌ DergiPark ve TR Dizin'i tarayamaz. | ❌ Genellikle sadece yabancı kaynaklara bakar. | ✅ **Var:** DergiPark'taki Türkçe makaleleri doğrudan tarar. |
+| **Türkçe Literatür (DergiPark)** | ❌ DergiPark ve TR Dizin'i tarayamaz. | ❌ Genellikle sadece yabancı kaynaklara bakar. | ✅ **Var:** DergiPark'taki Türkçe makaleleri doğrudan tarar. |
 | **Veri Gizliliği** | ❌ Verileriniz şirketin sunucularına gider. | ❌ Verileriniz internetteki bulutta tutulur. | ✅ **Güvenli:** Dosyalar doğrudan kendi Masaüstünüze kaydedilir. |
 | **İstatistik ve Hesaplama** | ❌ Matematiksel hesaplarda hata yapabilir. | ❌ Genellikle analiz yapmaz, sadece makale özetler. | ✅ **Hatasız:** Python kütüphaneleriyle gerçek hesaplama yapar. |
 | **Yapay Zekâ Benzerlik Oranı (Turnitin)** | ❌ %60-%80 arası yüksek benzerlik çıkar. | ⚠️ Yazım dili genellikle şablon ve monotondur. | ✅ **Doğal Dil:** Sade ve akıcı akademik dille yazar (<%15 benzerlik). |
