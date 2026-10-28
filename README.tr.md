@@ -20,32 +20,32 @@
 
 ScholarDirect-MCP v1.0, lisans ve lisansüstü öğrencileri ile araştırmacıların akademik çalışmalarını kolaylaştırmak için geliştirilmiş ücretsiz ve açık kaynaklı bir araştırma aracıdır. 
 
-Yapay zekâ modelleri (ChatGPT, Claude vb.) genellikle var olmayan sahte makaleler ve çalışmayan linkler uydurur. Ayrıca veri analizleri yaparken sohbete sürekli tablo kopyalayıp yapıştırmak çok fazla token harcar ve maliyeti artırır. ScholarDirect-MCP, bu sorunları çözmek için geliştirilmiştir:
+Yapay zekâ modelleri (ChatGPT, Claude vb.) genellikle var olmayan makaleler ve çalışmayan linkler uydurur. Ayrıca veri analizleri yaparken sohbete sürekli tablo kopyalayıp yapıştırmak çok fazla token harcar ve maliyeti artırır. ScholarDirect-MCP, bu sorunları çözmek için geliştirilmiştir:
 
 1. **Gerçek ve Doğrulanmış Kaynaklar:** Uluslararası (OpenAlex, Crossref) ve Türkiye'deki (DergiPark, TR Dizin) gerçek hakemli makaleleri bulur. DOI numarası çalışmayan veya yayından kaldırılmış hiçbir makaleyi listeye almaz.
 2. **Gerçek Verilerle Otomatik Analiz:** Dünya Bankası veya finans piyasalarından gerçek verileri indirir, temel istatistikleri ve modelleri (regresyon, karar verme modelleri vb.) doğrudan kendi bilgisayarınızda hesaplar.
-3. **Masaüstüne Düzenli Kayıt:** Tüm analiz dosyalarını, tabloları, grafikleri ve Word taslaklarını doğrudan Masaüstünüzde açtığı bir klasörde toplar.
-4. **%95'e Varan Token Tasarrufu:** Hesaplamaları yapay zekânın sohbet penceresinde değil, bilgisayarınızdaki Python motorunda yaparak yapay zekâ kullanım kotanızı korur.
+3. **Masaüstü Arşiv:** Tüm analiz dosyalarını, tabloları, grafikleri ve Word taslaklarını doğrudan Masaüstünüzde açtığı bir klasörde arşivler.
+4. **%95'e Varan Token Tasarrufu:** Hesaplamaları yapay zekânın sohbet penceresinde değil, bilgisayarınızdaki Python'la yaparak yapay zekâ kullanım kotanızı korur.
 
 ---
 
-## 🔒 Verileriniz Neden Güvende? (Doğrudan Masaüstünüze Kayıt)
+## 🔒 Verileriniz Neden Güvende? (Doğrudan Masaüstünü Arşiv)
 
-Birçok internet sitesi ve bulut tabanlı yapay zekâ uygulaması, yüklediğiniz tez taslaklarını, anket sonuçlarını veya veri setlerini kendi sunucularına kaydeder. Bu durum, henüz yayımlanmamış tez çalışmalarınızın veya araştırma fikirlerinizin başkalarının eline geçmesi riskini doğurur.
+Birçok internet sitesi ve bulut tabanlı yapay zekâ uygulaması, yüklediğiniz tez taslaklarını, anket sonuçlarını veya veri setlerini kendi sunucularına kaydeder. Bu durum, henüz yayımlanmamış tez çalışmalarınızın veya araştırma fikirlerinizin başkalarının eline geçmesi riskini doğurur ve ayrıca anketleri bulut tabanlı uygulamaya yükleyip analiz etmek bilimsel etik kurallarını ihlal eder.
 
 **ScholarDirect-MCP ile verileriniz tamamen sizin kontrolünüzdedir:**
-- **Buluta Veri Göndermez:** İndirilen veriler, yapılan hesaplamalar ve oluşturulan yazılar internetteki yabancı sunuculara yüklenmez. Tüm işlemler doğrudan sizin bilgisayarınızda çalışır.
+- **Buluta Veri Göndermez:** İndirilen veriler, yapılan hesaplamalar ve oluşturulan yazılar bulut sunuculara yüklenmez. Tüm araştırma süreci doğrudan sizin bilgisayarınızda çalışır.
 - **Dosyalarınız Masaüstünde Saklanır:** Her çalışma için otomatik olarak Masaüstünüzde düzenli bir klasör oluşturulur:  
   `Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/`
-- **Tam Gizlilik:** Ham verileriniz, analiz kodlarınız, net grafikleriniz ve Word formatındaki makale taslağınız sadece sizin bilgisayarınızda kalır.
+- **Tam Gizlilik:** Ham verileriniz, analiz kodlarınız, anketleriniz, grafikleriniz ve Word formatındaki makale taslağınız sadece sizin bilgisayarınızda kalır.
 
 ---
 
 ## ⚡ Token Verimliliği ve Karşılaştırmalı Kıyaslama
 
-Normalde bir yapay zekâya *"bana şu konuda makale yaz ve analiz yap"* dediğinizde; ham tabloları yapıştırmak, hatalı kodları düzeltmek ve uydurulan kaynakları ayıklamak için yüz binlerce token harcarsınız. 
+Yapay Zekâya *"bana şu konuda makale yaz ve analiz yap"* dediğinizde; ham tabloları eklemek, hatalı kodları düzeltmek ve doğrulanmamış kaynakları ayıklamak için yüz binlerce token harcarsınız. 
 
-ScholarDirect-MCP, FastMCP arka plan araçlarını **Academic Research Guardian Becerisi** (`academic-research-guardian`) ile birleştirerek bu sorunu çözer:
+ScholarDirect-MCP, FastMCP arka plan araçlarını **Academic Research Guardian** (`academic-research-guardian`) ile birleştirerek bu sorunu çözer:
 
 ### 6 Aşamalı Akademik Araştırma Döngüsü Kıyaslaması
 
@@ -93,7 +93,7 @@ scholar_direct/
 
 ## 📁 Masaüstünüzde Oluşturulan 5 Klasör Yapısı
 
-ScholarDirect-MCP bir proje başlattığınızda Masaüstünüzde otomatik olarak 5 düzenli klasör açar:
+ScholarDirect-MCP bir araştırma başlattığınızda Masaüstünüzde otomatik olarak 5 düzenli klasör oluştutur:
 
 ```text
 Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/
