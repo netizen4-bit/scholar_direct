@@ -2,7 +2,7 @@
 
 <p align="center">
   <b> Araştırmacılar İçin Yerel ve Güvenli Akademik Araştırma Asistanı</b><br>
-  <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, Dünya Bankası ve Academic Research Guardian Becerisi ile Desteklenmektedir</i>
+  <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, Dünya Bankası ve Academic Research Guardian ile Desteklenmektedir</i>
 </p>
 
 <p align="center">
