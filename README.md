@@ -1,7 +1,7 @@
 # ScholarDirect-MCP v1.0 🎓
 
 <p align="center">
-  <b>A Token-Efficient, Privacy-Focused Local Academic Research Assistant for Students & Researchers</b><br>
+  <b>A Token-Efficient, Privacy-Focused Local Academic Research </b><br>
   <i>Powered by FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, World Bank, and the Academic Research Guardian Skill</i>
 </p>
 
@@ -18,7 +18,7 @@
 
 ---
 
-ScholarDirect-MCP v1.0 is a free, open-source local Model Context Protocol (MCP) tool designed for undergraduate and graduate students, academic researchers, and analysts.
+ScholarDirect-MCP v1.0 is a free, open-source local Model Context Protocol (MCP) tool designed for academic researchers, and analysts.
 
 Standard AI models (ChatGPT, Claude, etc.) often hallucinate non-existent academic papers, invent fake DOIs, and waste thousands of tokens when you copy and paste raw spreadsheets into chat. ScholarDirect-MCP solves this by connecting your AI assistant directly to verified databases and executing real analysis code locally on your own computer:
 
