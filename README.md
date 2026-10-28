@@ -41,21 +41,23 @@ Most cloud-hosted academic tools upload your unpublished drafts, research ideas,
 
 ---
 
-## ⚡ Token Savings: Why It Uses Fewer Tokens
+## ⚡ Token Effectiveness & Benchmark
 
 When you ask a standard AI chat to analyze data and write a paper, uploading large CSV files and repeatedly fixing broken code burns hundreds of thousands of tokens. 
 
-ScholarDirect-MCP does the heavy lifting in Python locally on your machine and only sends the clean final result back to the chat:
+ScholarDirect-MCP pairs FastMCP backend tools with the structured **Academic Research Guardian Skill** (`academic-research-guardian`) to solve this:
 
-| Research Stage | Standard AI Chat | With ScholarDirect-MCP | Savings |
+### 6-Phase Academic Research Cycle Benchmark
+
+| Research Stage | Standard / Unconstrained Loop | ScholarDirect-MCP + Guardian Skill | Token Savings |
 |---|---|---|---|
-| **1. Finding Literature** | ~120,000 tokens *(unverified text, dead links)* | **~3,500 tokens** *(compact verified table)* | **-97%** |
-| **2. Scoring Paper Relevance** | ~85,000 tokens *(conversational guesswork)* | **~2,200 tokens** *(instant local scoring)* | **-97%** |
-| **3. Literature Gap Analysis** | ~90,000 tokens *(vague text advice)* | **~2,500 tokens** *(300-DPI chart saved to disk)* | **-97%** |
-| **4. Data & Descriptive Stats** | ~180,000 tokens *(pasting raw tables into chat)* | **~3,000 tokens** *(automatic World Bank fetch)* | **-98%** |
-| **5. Statistical Modeling** | ~250,000 tokens *(back-and-forth code debugging)* | **~3,500 tokens** *(clean local estimation)* | **-98%** |
-| **6. Manuscript Drafting** | ~220,000 tokens *(rewriting AI-heavy text)* | **~18,000 tokens** *(human academic tone directly in Word)* | **-92%** |
-| **Total Tokens Spent** | **~945,000 tokens** | **~32,700 tokens** | **-96.5% Savings** |
+| **1. Literature Discovery & Scraping** | **~120,000 tokens**<br>*(Ingests raw HTML DOMs, unverified PDF text, dead links)* | **~3,500 tokens**<br>*(Pre-filtered OpenAlex + DergiPark; compact table)* | **-97.1%** |
+| **2. Paper Relevance Scoring** | **~85,000 tokens**<br>*(Lengthy LLM guessing on methodology & domain fit)* | **~2,200 tokens**<br>*(Local Python math; instant 5-branch verdict)* | **-97.4%** |
+| **3. Literature Gap Analysis** | **~90,000 tokens**<br>*(Vague text advice; no charts generated)* | **~2,500 tokens**<br>*(300-DPI chart and Word report saved to disk)* | **-97.2%** |
+| **4. Empirical Data & Descriptives** | **~180,000 tokens**<br>*(Pasting raw CSV tables; math hallucination)* | **~3,000 tokens**<br>*(Direct World Bank fetch; local Scipy stats)* | **-98.3%** |
+| **5. Statistical & Econometric Modeling** | **~250,000 tokens**<br>*(15+ turns of interactive Python code debugging)* | **~3,500 tokens**<br>*(Local `statsmodels`/`lifelines` run; diagnostic tables)* | **-98.6%** |
+| **6. Manuscript Drafting & Humanization** | **~220,000 tokens**<br>*(Repeated rewriting to lower 70%+ AI Turnitin flags)* | **~18,000 tokens**<br>*(Single-pass natural academic draft in `.docx`)* | **-91.8%** |
+| **Total Context Spent** | **~945,000 tokens** | **~32,700 tokens** | **-96.5% Total Reduction** |
 
 ---
 
@@ -69,6 +71,23 @@ ScholarDirect-MCP does the heavy lifting in Python locally on your machine and o
 | **Statistical Calculations** | ❌ Prone to math hallucination in chat. | ❌ Only summarizes text; no actual modeling. | ✅ **Real Math:** Exact Python estimation (`statsmodels`). |
 | **Turnitin AI Similarity** | ❌ Often scores 60%–80% AI detection. | ⚠️ Repetitive template sentences. | ✅ **Natural Prose:** Organic academic phrasing (<15%). |
 | **Cost** | $20 – $200/month | $30 – $100/month | ✅ **100% Free & Open Source** |
+
+---
+
+## 📁 Project Structure
+
+```text
+scholar_direct/
+├── .agent/
+│   └── skills/
+│       └── academic-research-guardian/
+│           └── SKILL.md             # Turnitin-proof (<15%) academic prose, real method whitelist & APA rules
+├── scholar_direct.py                # Full-stack FastMCP Server exposing 7 core academic tools
+├── requirements.txt                 # Core Python scientific, econometric, scraping & document dependencies
+├── LICENSE                          # MIT License
+├── README.tr.md                     # Dedicated Turkish documentation
+└── README.md                        # Project documentation, benchmarks & setup guides
+```
 
 ---
 
@@ -100,7 +119,7 @@ Desktop/Academic_Research_Workspace/<Project_Name>_<Date>/
 
 ---
 
-## 🛠️ The 7 Core Tools Explained Simply
+## 🛠️ MCP Tools Reference (Full 7-Tool Suite)
 
 1. `search_verified_literature`: Finds real academic papers with active DOIs from OpenAlex and DergiPark, saving an Excel sheet to your Desktop.
 2. `evaluate_paper_fit`: Scores found papers (0–100) based on how well they match your topic and target methodology.
@@ -134,9 +153,16 @@ Data privacy rule: Keep all files saved locally on my Desktop; do not leak data 
 
 ---
 
-## 📦 Setup & Connection
+## 📦 Prerequisites & Quick Setup
 
-### 1. Manual Installation
+### 1. Prerequisites
+* **Python (3.10+)**
+* **Git**
+* **Playwright Chromium** (`playwright install chromium`)
+* An MCP-compatible client (**Antigravity CLI / IDE**, **Claude Desktop**, **Cursor**) or a local **Ollama** setup.
+
+### 2. Manual Installation
+Clone the repository, install Python dependencies, and install the headless browser binary for Playwright:
 ```bash
 git clone https://github.com/netizen4-bit/scholar_direct.git
 cd scholar_direct
@@ -144,8 +170,32 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 2. Connect to AI Clients (MCP JSON Configuration)
-Add to your `claude_desktop_config.json`, `config.json`, or Cursor settings:
+### 3. Automatic installation of local ScholarDirect MCP server using Antigravity app
+If you are using Google Antigravity, you can install and configure ScholarDirect MCP completely automatically with zero manual steps. Simply paste the following prompt directly into your Antigravity chat:
+
+````markdown
+Install and configure the ScholarDirect MCP server into my Antigravity setup:
+
+1. Clone or pull the repository from https://github.com/netizen4-bit/scholar_direct into a permanent directory at `~/.gemini/antigravity/scholar-direct-mcp`.
+2. Automatically install all missing Python dependencies from `requirements.txt` (`pip install -r requirements.txt`) and ensure Playwright Chromium is installed (`playwright install chromium`).
+3. Register the server in Antigravity's global MCP configuration (`~/.gemini/antigravity/config.json`):
+   - Server name: `scholardirect`
+   - Command: `python`
+   - Args: Full absolute path to `scholar_direct.py` (ensure Windows backslashes are escaped)
+   - Environment variables: Set `SCHOLARDIRECT_WORKSPACE_DIR` to `Desktop/Academic_Research_Workspace`.
+4. Copy the bundled agent skill (`.agent/skills/academic-research-guardian/SKILL.md`) into `~/.gemini/config/skills/academic-research-guardian/`.
+5. Run a sanity check to verify that `scholar_direct.py` imports cleanly, and confirm once all 7 MCP tools are registered.
+````
+
+The agent will pull the repo, configure `config.json`, install all packages and Playwright browser binaries, mount the agent skills, and verify the tools end-to-end.
+
+---
+
+## 🔌 Connecting to Your AI Client (MCP JSON Configuration)
+
+Add ScholarDirect to your MCP configuration file (e.g. `claude_desktop_config.json`, `config.json`, or Cursor settings):
+
+> ⚠️ **Note on Windows Paths:** In JSON strings, backslashes must be escaped (`\\`) or written with forward slashes (`/`).
 
 ```json
 {

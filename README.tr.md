@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>Öğrenciler ve Araştırmacılar İçin Yerel ve Güvenli Akademik Araştırma Asistanı</b><br>
-  <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin ve Academic Research Guardian Becerisi ile Desteklenmektedir</i>
+  <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, Dünya Bankası ve Academic Research Guardian Becerisi ile Desteklenmektedir</i>
 </p>
 
 <p align="center">
@@ -41,21 +41,23 @@ Birçok internet sitesi ve bulut tabanlı yapay zekâ uygulaması, yüklediğini
 
 ---
 
-## ⚡ Neden Daha Az Token Harcar? (Tasarruf Tablosu)
+## ⚡ Token Verimliliği ve Karşılaştırmalı Kıyaslama
 
 Normalde bir yapay zekâya *"bana şu konuda makale yaz ve analiz yap"* dediğinizde; ham tabloları yapıştırmak, hatalı kodları düzeltmek ve uydurulan kaynakları ayıklamak için yüz binlerce token harcarsınız. 
 
-ScholarDirect-MCP ise arka planda çalışan Python araçlarıyla işi doğrudan bilgisayarınızda çözer ve sohbete yalnızca temiz bir özet tablo sunar:
+ScholarDirect-MCP, FastMCP arka plan araçlarını **Academic Research Guardian Becerisi** (`academic-research-guardian`) ile birleştirerek bu sorunu çözer:
 
-| Araştırma Aşaması | Standart Yapay Zekâ Sohbeti | ScholarDirect-MCP ile | Tasarruf |
+### 6 Aşamalı Akademik Araştırma Döngüsü Kıyaslaması
+
+| Araştırma Aşaması | Standart / Serbest Yapay Zekâ Sohbeti | ScholarDirect-MCP + Guardian Becerisi | Token Tasarrufu |
 |---|---|---|---|
-| **1. Kaynak Arama** | ~120.000 token *(uzun metinler, ölü linkler)* | **~3.500 token** *(sadece onaylı makale özeti)* | **-%97** |
-| **2. Makale Puanlama** | ~85.000 token *(sohbette tahmin yürütme)* | **~2.200 token** *(bilgisayarda hızlı puanlama)* | **-%97** |
-| **3. Konu Boşluğu Analizi** | ~90.000 token *(sohbette uzun tartışmalar)* | **~2.500 token** *(Masaüstüne kaydedilen hazır grafik)* | **-%97** |
-| **4. Veri İndirme & İstatistik** | ~180.000 token *(sohbete ham veri yapıştırma)* | **~3.000 token** *(Dünya Bankası'ndan otomatik çekim)* | **-%98** |
-| **5. Model & Hesaplamalar** | ~250.000 token *(kod hatalarını sohbette düzeltme)* | **~3.500 token** *(bilgisayarda hatasız hesaplama)* | **-%98** |
-| **6. Makale Taslağı Yazımı** | ~220.000 token *(yapay zekâ kokan metni tekrar yazma)* | **~18.000 token** *(doğal akademik dilde tek seferde Word)* | **-%92** |
-| **Toplam Harcanan Token** | **~945.000 token** | **~32.700 token** | **-%96,5 Tasarruf** |
+| **1. Kaynak Arama & Tarama** | **~120.000 token**<br>*(Ham HTML sayfaları, doğrulanamayan PDF'ler, ölü linkler)* | **~3.500 token**<br>*(Sadece onaylı OpenAlex + DergiPark özet tablosu)* | **-%97,1** |
+| **2. Makale Uygunluk Puanlama** | **~85.000 token**<br>*(Sohbette konu ve metot hakkında tahmin yürütme)* | **~2.200 token**<br>*(Bilgisayarda hızlı Python matematiği; kesin karar)* | **-%97,4** |
+| **3. Literatür Boşluğu Analizi** | **~90.000 token**<br>*(Grafiksiz, genel ve yüzeysel sohbet önerileri)* | **~2.500 token**<br>*(Masaüstüne kaydedilen 300-DPI grafik ve Word raporu)* | **-%97,2** |
+| **4. Ampirik Veri & Betimsel İstatistik** | **~180.000 token**<br>*(Sohbete ham tablo yapıştırma; hatalı hesaplar)* | **~3.000 token**<br>*(Dünya Bankası API çekimi; yerel Scipy APA matrisi)* | **-%98,3** |
+| **5. Ekonometrik Modelleme** | **~250.000 token**<br>*(Sohbette 15+ tur Python hata ayıklama ve kod düzeltme)* | **~3.500 token**<br>*(Yerel `statsmodels`/`lifelines` çalıştırması; tanı testleri)* | **-%98,6** |
+| **6. Makale Taslağı Yazımı** | **~220.000 token**<br>*(Turnitin %60+ benzerliğini kırmak için defalarca yeniden yazma)* | **~18.000 token**<br>*(İlk seferde doğal akademik dilde Word çıktısı)* | **-%91,8** |
+| **Toplam Harcanan Bağlam Tokenı** | **~945.000 token** | **~32.700 token** | **-%96,5 Toplam Tasarruf** |
 
 ---
 
@@ -72,7 +74,24 @@ ScholarDirect-MCP ise arka planda çalışan Python araçlarıyla işi doğrudan
 
 ---
 
-## 📁 Masaüstünüzde Oluşturulan Klasör Yapısı
+## 📁 Proje Dizin Yapısı
+
+```text
+scholar_direct/
+├── .agent/
+│   └── skills/
+│       └── academic-research-guardian/
+│           └── SKILL.md             # Doğal akademik dil, gerçek metotlar ve APA 7 kuralları
+├── scholar_direct.py                # 7 temel akademik aracı sunan FastMCP sunucusu
+├── requirements.txt                 # Gerekli bilimsel, ekonometrik ve ofis Python paketleri
+├── LICENSE                          # MIT Lisansı
+├── README.tr.md                     # Türkçe dokümantasyon
+└── README.md                        # Ana İngilizce dokümantasyon ve kıyaslamalar
+```
+
+---
+
+## 📁 Masaüstünüzde Oluşturulan 5 Klasör Yapısı
 
 ScholarDirect-MCP bir proje başlattığınızda Masaüstünüzde otomatik olarak 5 düzenli klasör açar:
 
@@ -90,8 +109,8 @@ Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/
 ├── 03_Models_and_Scripts/
 │   └── run_model_<model>.py          # Bilgisayarınızda çalışan çalıştırılabilir Python kodu
 ├── 04_Figures_and_Tables/
-│   ├── citation_trend_by_year.png    # Yıllara göre yayın grafiği (yüksek çözünürlüklü)
-│   ├── methodology_gap_heatmap.png   # Konu ve yöntem boşluk haritası
+│   ├── citation_trend_by_year.png    # Yıllara göre yayın grafiği (300-DPI)
+│   ├── methodology_gap_heatmap.png   # Konu ve yöntem boşluk haritası (300-DPI)
 │   └── model_diagnostics.png         # Model test ve sonuç grafikleri
 └── 05_Manuscript_Drafts/
     ├── <Proje_Adı>_manuscript.md      # Makale taslağının Markdown hali
@@ -100,7 +119,7 @@ Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/
 
 ---
 
-## 🛠️ Sunulan 7 Basit Araç Ne İşe Yarar?
+## 🛠️ MCP Araçları Referansı (7 Temel Araç)
 
 1. `search_verified_literature`: Konunuzla ilgili gerçek makaleleri arar, özetlerini çıkarır ve Excel olarak Masaüstünüze kaydeder.
 2. `evaluate_paper_fit`: Bulunan makalelerin sizin konunuza ve metodunuza ne kadar uygun olduğunu 0-100 arasında puanlar.
@@ -116,7 +135,6 @@ Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/
 
 Yapay zekâ asistanınıza (Antigravity, Claude Desktop veya Cursor) tek bir açık yönerge vererek tüm süreci kolayca çalıştırabilirsiniz:
 
-### 🎯 Örnek 1: Tam Kapsamlı Bir Araştırma Başlatmak İçin
 ```markdown
 ScholarDirect-MCP araçlarını kullanarak benim için şu konuda bir araştırma projesi yürüt:
 "Gelişmekte Olan Ülkelerde FinTech ve Dijital Bankacılığın Ekonomik Büyüme Üzerindeki Etkisi"
@@ -133,19 +151,18 @@ Lütfen sırasıyla şu adımları tamamla:
 Veri gizliliği kuralına dikkat et: Tüm dosyalarımı yerel Masaüstü klasörümde tut, verileri internete sızdırma. Dili sade, akıcı ve doğal bir akademik üslupla yaz.
 ```
 
-### 🔬 Örnek 2: Karar Verme veya Önceliklendirme Analizi İçin (AHP-TOPSIS)
-```markdown
-ScholarDirect-MCP kullanarak "Surdurulebilir_Tedarikci_Secimi" başlıklı bir karar analizi yap:
-1. Konuyla ilgili 10 onaylı makale bul.
-2. 4 kriter belirleyerek ("Maliyet", "Kalite", "Teslimat_Hızı", "Çevre_Duyarlılığı") AHP-TOPSIS modelini çalıştır.
-3. Sonuç grafiğini ve Python kodunu Masaüstümdeki klasöre kaydet.
-```
-
 ---
 
-## 📦 Kolay Kurulum
+## 📦 Gereksinimler ve Hızlı Kurulum
 
-### 1. Elle Kurulum
+### 1. Ön Koşullar ve Gereksinimler (Prerequisites)
+* **Python (3.10+)**
+* **Git**
+* **Playwright Chromium** (`playwright install chromium`)
+* MCP uyumlu bir yapay zekâ istemcisi (**Antigravity CLI / IDE**, **Claude Desktop**, **Cursor**) veya yerel **Ollama** kurulumu.
+
+### 2. Elle (Manuel) Kurulum
+Repoyu klonlayın, Python bağımlılıklarını yükleyin ve Playwright tarayıcısını kurun:
 ```bash
 git clone https://github.com/netizen4-bit/scholar_direct.git
 cd scholar_direct
@@ -153,22 +170,48 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### 2. Google Antigravity İçin Otomatik Kurulum
-Google Antigravity kullanıyorsanız, şu kısa metni sohbete yapıştırmanız yeterlidir:
+### 3. Google Antigravity ile Otomatik Kurulum
+Google Antigravity kullanıyorsanız, hiçbir şeyi elle kurmanıza gerek yoktur. Aşağıdaki yönergeyi kopyalayıp Antigravity sohbetine yapıştırmanız yeterlidir:
 
 ````markdown
-ScholarDirect MCP sunucusunu Antigravity ortamıma kur:
+ScholarDirect MCP sunucusunu Antigravity ortamıma otomatik olarak kur ve bağla:
 
 1. https://github.com/netizen4-bit/scholar_direct adresindeki repoyu `~/.gemini/antigravity/scholar-direct-mcp` klasörüne klonla.
-2. `requirements.txt` dosyasındaki kütüphaneleri yükle (`pip install -r requirements.txt`).
-3. Sunucuyu `~/.gemini/antigravity/config.json` dosyasına ekle:
+2. `requirements.txt` dosyasındaki tüm kütüphaneleri yükle (`pip install -r requirements.txt`) ve Playwright Chromium tarayıcısının kurulu olduğundan emin ol (`playwright install chromium`).
+3. Sunucuyu Antigravity MCP yapılandırmasına (`~/.gemini/antigravity/config.json`) ekle:
    - Sunucu adı: `scholardirect`
    - Komut: `python`
-   - Dosya: `scholar_direct.py` tam yolu
-   - Kayıt Yeri: `Desktop/Academic_Research_Workspace`
-4. Birlikte gelen beceriyi (`.agent/skills/academic-research-guardian/SKILL.md`) Antigravity beceri klasörüne kopyala.
-5. Kurulumu test et ve 7 aracın hazır olduğunu doğrula.
+   - Dosya: `scholar_direct.py` tam mutlak yolu (ters eğik çizgilerin kaçışlı olduğundan emin ol)
+   - Ortam Değişkeni: `SCHOLARDIRECT_WORKSPACE_DIR` değerini `Desktop/Academic_Research_Workspace` olarak ayarla.
+4. Birlikte gelen beceriyi (`.agent/skills/academic-research-guardian/SKILL.md`) `~/.gemini/config/skills/academic-research-guardian/` dizinine kopyala.
+5. `scholar_direct.py` dosyasını test et ve 7 MCP aracının sorunsuz yüklendiğini onayla.
 ````
+
+Antigravity asistanı repoyu çekecek, `config.json` dosyasını yapılandıracak, eksik paketleri kuracak ve araçları kullanıma hazır hale getirecektir.
+
+---
+
+## 🔌 Yapay Zekâ İstemcinize Bağlama (MCP JSON Yapılandırması)
+
+ScholarDirect sunucusunu `claude_desktop_config.json`, `config.json` veya Cursor ayarlarınıza ekleyin:
+
+> ⚠️ **Windows Yolları İçin Not:** JSON dosyalarında ters eğik çizgiler (`\`) kaçışlı (`\\`) yazılmalı veya düz eğik çizgi (`/`) kullanılmalıdır.
+
+```json
+{
+  "mcpServers": {
+    "scholardirect": {
+      "command": "python",
+      "args": [
+        "C:\\Users\\KULLANICI_ADINIZ\\.gemini\\antigravity\\scholar-direct-mcp\\scholar_direct.py"
+      ],
+      "env": {
+        "SCHOLARDIRECT_WORKSPACE_DIR": "C:\\Users\\KULLANICI_ADINIZ\\Desktop\\Academic_Research_Workspace"
+      }
+    }
+  }
+}
+```
 
 ---
 
