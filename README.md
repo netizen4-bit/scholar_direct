@@ -1,191 +1,29 @@
 # ScholarDirect-MCP v1.0 🎓
 
 <p align="center">
-  <b>Öğrenciler ve Araştırmacılar İçin Yerel ve Güvenli Akademik Araştırma Asistanı</b><br>
-  <i>A Token-Efficient, Privacy-Focused Local Academic Research Assistant for Students & Researchers</i>
+  <b>A Token-Efficient, Privacy-Focused Local Academic Research Assistant for Students & Researchers</b><br>
+  <i>Powered by FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, World Bank, and the Academic Research Guardian Skill</i>
 </p>
 
 <p align="center">
-  <a href="#-türkçe"><b>Türkçe 🇹🇷</b></a> •
-  <a href="#-english"><b>English 🇬🇧</b></a>
+  <b>English 🇬🇧</b> • <a href="README.tr.md"><b>Türkçe 🇹🇷</b></a>
 </p>
 
 <p align="center">
   <a href="https://github.com/netizen4-bit/scholar_direct/stargazers"><img src="https://img.shields.io/github/stars/netizen4-bit/scholar_direct?style=for-the-badge&logo=github&color=1F4E79" alt="Stars"></a>
   <a href="https://github.com/netizen4-bit/scholar_direct/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge" alt="License"></a>
-  <a href="https://www.patreon.com/netizen4_bit"><img src="https://img.shields.io/badge/Patreon-Destek-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon"></a>
-  <a href="https://www.linkedin.com/in/nihatkasim"><img src="https://img.shields.io/badge/LinkedIn-Bağlantı-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
+  <a href="https://www.patreon.com/netizen4_bit"><img src="https://img.shields.io/badge/Patreon-Support-F96854?style=for-the-badge&logo=patreon&logoColor=white" alt="Patreon"></a>
+  <a href="https://www.linkedin.com/in/nihatkasim"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"></a>
 </p>
 
 ---
 
-<a name="-türkçe"></a>
-# 🇹🇷 TÜRKÇE DOKÜMANTASYON
+ScholarDirect-MCP v1.0 is a free, open-source local Model Context Protocol (MCP) tool designed for undergraduate and graduate students, academic researchers, and analysts.
 
-ScholarDirect-MCP v1.0, lisans ve lisansüstü öğrencileri ile araştırmacıların akademik çalışmalarını kolaylaştırmak için geliştirilmiş ücretsiz ve açık kaynaklı bir araştırma aracıdır. 
+Standard AI models (ChatGPT, Claude, etc.) often hallucinate non-existent academic papers, invent fake DOIs, and waste thousands of tokens when you copy and paste raw spreadsheets into chat. ScholarDirect-MCP solves this by connecting your AI assistant directly to verified databases and executing real analysis code locally on your own computer:
 
-Yapay zekâ modelleri (ChatGPT, Claude vb.) genellikle var olmayan sahte makaleler ve çalışmayan linkler uydurur. Ayrıca veri analizleri yaparken sohbete sürekli tablo kopyalayıp yapıştırmak çok fazla token harcar ve maliyeti artırır. ScholarDirect-MCP, bu sorunları çözmek için geliştirilmiştir:
-
-1. **Gerçek ve Doğrulanmış Kaynaklar:** Uluslararası (OpenAlex, Crossref) ve Türkiye'deki (DergiPark, TR Dizin) gerçek hakemli makaleleri bulur. DOI numarası çalışmayan veya yayından kaldırılmış hiçbir makaleyi listeye almaz.
-2. **Gerçek Verilerle Otomatik Analiz:** Dünya Bankası veya finans piyasalarından gerçek verileri indirir, temel istatistikleri ve modelleri (regresyon, karar verme modelleri vb.) doğrudan kendi bilgisayarınızda hesaplar.
-3. **Masaüstüne Düzenli Kayıt:** Tüm analiz dosyalarını, tabloları, grafikleri ve Word taslaklarını doğrudan Masaüstünüzde açtığı bir klasörde toplar.
-4. **%95'e Varan Token Tasarrufu:** Hesaplamaları yapay zekânın sohbet penceresinde değil, bilgisayarınızdaki Python motorunda yaparak yapay zekâ kullanım kotanızı korur.
-
----
-
-## 🔒 Verileriniz Neden Güvende? (Doğrudan Masaüstünüze Kayıt)
-
-Birçok internet sitesi ve bulut tabanlı yapay zekâ uygulaması, yüklediğiniz tez taslaklarını, anket sonuçlarını veya veri setlerini kendi sunucularına kaydeder. Bu durum, henüz yayımlanmamış tez çalışmalarınızın veya araştırma fikirlerinizin başkalarının eline geçmesi riskini doğurur.
-
-**ScholarDirect-MCP ile verileriniz tamamen sizin kontrolünüzdedir:**
-- **Buluta Veri Göndermez:** İndirilen veriler, yapılan hesaplamalar ve oluşturulan yazılar internetteki yabancı sunuculara yüklenmez. Tüm işlemler doğrudan sizin bilgisayarınızda çalışır.
-- **Dosyalarınız Masaüstünde Saklanır:** Her çalışma için otomatik olarak Masaüstünüzde düzenli bir klasör oluşturulur:  
-  `Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/`
-- **Tam Gizlilik:** Ham verileriniz, analiz kodlarınız, net grafikleriniz ve Word formatındaki makale taslağınız sadece sizin bilgisayarınızda kalır.
-
----
-
-## ⚡ Neden Daha Az Token Harcar? (Tasarruf Tablosu)
-
-Normalde bir yapay zekâya *"bana şu konuda makale yaz ve analiz yap"* dediğinizde; ham tabloları yapıştırmak, hatalı kodları düzeltmek ve uydurulan kaynakları ayıklamak için yüz binlerce token harcarsınız. 
-
-ScholarDirect-MCP ise arka planda çalışan Python araçlarıyla işi doğrudan bilgisayarınızda çözer ve sohbete yalnızca temiz bir özet tablo sunar:
-
-| Araştırma Aşaması | Standart Yapay Zekâ Sohbeti | ScholarDirect-MCP ile | Tasarruf |
-|---|---|---|---|
-| **1. Kaynak Arama** | ~120.000 token *(uzun metinler, ölü linkler)* | **~3.500 token** *(sadece onaylı makale özeti)* | **-%97** |
-| **2. Makale Puanlama** | ~85.000 token *(sohbette tahmin yürütme)* | **~2.200 token** *(bilgisayarda hızlı puanlama)* | **-%97** |
-| **3. Konu Boşluğu Analizi** | ~90.000 token *(sohbette uzun tartışmalar)* | **~2.500 token** *(Masaüstüne kaydedilen hazır grafik)* | **-%97** |
-| **4. Veri İndirme & İstatistik** | ~180.000 token *(sohbete ham veri yapıştırma)* | **~3.000 token** *(Dünya Bankası'ndan otomatik çekim)* | **-%98** |
-| **5. Model & Hesaplamalar** | ~250.000 token *(kod hatalarını sohbette düzeltme)* | **~3.500 token** *(bilgisayarda hatasız hesaplama)* | **-%98** |
-| **6. Makale Taslağı Yazımı** | ~220.000 token *(yapay zekâ kokan metni tekrar yazma)* | **~18.000 token** *(doğal akademik dilde tek seferde Word)* | **-%92** |
-| **Toplam Harcanan Token** | **~945.000 token** | **~32.700 token** | **-%96,5 Tasarruf** |
-
----
-
-## 📊 Karşılaştırma: ScholarDirect-MCP vs. Diğer Yöntemler
-
-| Özellik | Normal ChatGPT / Claude | Ücretli Akademik Siteler (30-100$/ay) | ScholarDirect-MCP |
-|---|---|---|---|
-| **Kaynak Doğruluğu** | ❌ Olmayan makaleler uydurabilir. | ⚠️ Yalnızca anlaşmalı dergileri gösterir. | ✅ **%100 Gerçek:** Crossref ile kontrol edilmiş gerçek makaleler. |
-| **Türkiye Literatürü (DergiPark)** | ❌ DergiPark ve TR Dizin'i tarayamaz. | ❌ Genellikle sadece yabancı kaynaklara bakar. | ✅ **Var:** DergiPark'taki Türkçe makaleleri doğrudan tarar. |
-| **Veri Gizliliği** | ❌ Verileriniz şirketin sunucularına gider. | ❌ Verileriniz internetteki bulutta tutulur. | ✅ **Güvenli:** Dosyalar doğrudan kendi Masaüstünüze kaydedilir. |
-| **İstatistik ve Hesaplama** | ❌ Matematiksel hesaplarda hata yapabilir. | ❌ Genellikle analiz yapmaz, sadece makale özetler. | ✅ **Hatasız:** Python kütüphaneleriyle gerçek hesaplama yapar. |
-| **Yapay Zekâ Benzerlik Oranı (Turnitin)** | ❌ %60-%80 arası yüksek benzerlik çıkar. | ⚠️ Yazım dili genellikle şablon ve monotondur. | ✅ **Doğal Dil:** Sade ve akıcı akademik dille yazar (<%15 benzerlik). |
-| **Kullanım Ücreti** | Aylık 20$ - 200$ | Aylık 30$ - 100$ | ✅ **%100 Ücretsiz ve Açık Kaynak** |
-
----
-
-## 📁 Masaüstünüzde Oluşturulan Klasör Yapısı
-
-ScholarDirect-MCP bir proje başlattığınızda Masaüstünüzde otomatik olarak 5 düzenli klasör açar:
-
-```text
-Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/
-├── 01_Literature_and_Bibliometrics/
-│   ├── verified_literature.xlsx      # Renkli ve filtreli Excel makale listesi
-│   ├── verified_references.bib       # LaTeX ve tez yazımı için BibTeX dosyası
-│   ├── apa7_bibliography.docx        # Word formatında hazır APA 7 kaynakçası
-│   └── bibliometric_gap_report.docx  # Literatürdeki eksiklikleri anlatan Word raporu
-├── 02_Empirical_Datasets/
-│   ├── raw_dataset.csv               # İnternetten indirilen ham veri seti
-│   ├── cleaned_dataset.xlsx          # Temizlenmiş veri ve korelasyon tablosu
-│   └── descriptive_stats.docx        # Ortalama, standart sapma vb. özet tabloları
-├── 03_Models_and_Scripts/
-│   └── run_model_<model>.py          # Bilgisayarınızda çalışan çalıştırılabilir Python kodu
-├── 04_Figures_and_Tables/
-│   ├── citation_trend_by_year.png    # Yıllara göre yayın grafiği (yüksek çözünürlüklü)
-│   ├── methodology_gap_heatmap.png   # Konu ve yöntem boşluk haritası
-│   └── model_diagnostics.png         # Model test ve sonuç grafikleri
-└── 05_Manuscript_Drafts/
-    ├── <Proje_Adı>_manuscript.md      # Makale taslağının Markdown hali
-    └── <Proje_Adı>_manuscript.docx    # Başlıkları ve tabloları hazır Word makalesi
-```
-
----
-
-## 🛠️ Sunulan 7 Basit Araç Ne İşe Yarar?
-
-1. `search_verified_literature`: Konunuzla ilgili gerçek makaleleri arar, özetlerini çıkarır ve Excel olarak Masaüstünüze kaydeder.
-2. `evaluate_paper_fit`: Bulunan makalelerin sizin konunuza ve metodunuza ne kadar uygun olduğunu 0-100 arasında puanlar.
-3. `bibliometric_gap_and_journal_report`: Literatürde hangi konuların az çalışıldığını gösterir, net grafikler çizer ve çalışabileceğiniz 3 model önerir.
-4. `generate_deterministic_apa7`: Makalelerin kaynakçasını APA 7 kurallarına göre (Türkçe için "vd." ve "ve" ekleyerek) Word ve BibTeX olarak hazırlar.
-5. `fetch_empirical_dataset`: Dünya Bankası'ndan veya piyasalardan gerçek verileri indirir; ortalama, en küçük, en büyük gibi özet istatistikleri çıkarır.
-6. `run_quantitative_or_qualitative_model`: Regresyon analizi, karar verme (AHP-TOPSIS) veya tahmin modellerini çalıştırıp sonuç tablosunu üretir.
-7. `export_academic_manuscript`: Tüm bu adımları birleştirip giriş, yöntem, bulgular ve kaynakçası olan derli toplu bir Word makale taslağı oluşturur.
-
----
-
-## 💬 Başlangıç İçin Örnek Promptlar (Hemen Kopyalayıp Kullanın)
-
-Yapay zekâ asistanınıza (Antigravity, Claude Desktop veya Cursor) tek bir açık yönerge vererek tüm süreci kolayca çalıştırabilirsiniz:
-
-### 🎯 Örnek 1: Tam Kapsamlı Bir Araştırma Başlatmak İçin
-```markdown
-ScholarDirect-MCP araçlarını kullanarak benim için şu konuda bir araştırma projesi yürüt:
-"Gelişmekte Olan Ülkelerde FinTech ve Dijital Bankacılığın Ekonomik Büyüme Üzerindeki Etkisi"
-
-Lütfen sırasıyla şu adımları tamamla:
-1. OpenAlex ve DergiPark üzerinden konuyla ilgili doğrulanmış 15 makale bul.
-2. Makaleleri konuma uygunluğuna göre puanla ve en temel kaynakları belirle.
-3. Literatürdeki eksiklikleri gösteren grafikleri oluştur.
-4. Dünya Bankası'ndan Türkiye ve benzer ülkeler için GSYİH büyüme verisini indirip özet istatistik tablosunu hazırla.
-5. Veriler üzerinden regresyon modelini çalıştır ve sonuçları çıkar.
-6. Tüm kaynakları APA 7 formatında düzenle.
-7. Sonuçları Masaüstümdeki Academic_Research_Workspace klasörüne hazır bir Word (.docx) makale taslağı olarak kaydet.
-
-Veri gizliliği kuralına dikkat et: Tüm dosyalarımı yerel Masaüstü klasörümde tut, verileri internete sızdırma. Dili sade, akıcı ve doğal bir akademik üslupla yaz.
-```
-
-### 🔬 Örnek 2: Karar Verme veya Önceliklendirme Analizi İçin (AHP-TOPSIS)
-```markdown
-ScholarDirect-MCP kullanarak "Surdurulebilir_Tedarikci_Secimi" başlıklı bir karar analizi yap:
-1. Konuyla ilgili 10 onaylı makale bul.
-2. 4 kriter belirleyerek ("Maliyet", "Kalite", "Teslimat_Hızı", "Çevre_Duyarlılığı") AHP-TOPSIS modelini çalıştır.
-3. Sonuç grafiğini ve Python kodunu Masaüstümdeki klasöre kaydet.
-```
-
----
-
-## 📦 Kolay Kurulum
-
-### 1. Elle Kurulum
-```bash
-git clone https://github.com/netizen4-bit/scholar_direct.git
-cd scholar_direct
-pip install -r requirements.txt
-playwright install chromium
-```
-
-### 2. Google Antigravity İçin Otomatik Kurulum
-Google Antigravity kullanıyorsanız, şu kısa metni sohbete yapıştırmanız yeterlidir:
-
-````markdown
-ScholarDirect MCP sunucusunu Antigravity ortamıma kur:
-
-1. https://github.com/netizen4-bit/scholar_direct adresindeki repoyu `~/.gemini/antigravity/scholar-direct-mcp` klasörüne klonla.
-2. `requirements.txt` dosyasındaki kütüphaneleri yükle (`pip install -r requirements.txt`).
-3. Sunucuyu `~/.gemini/antigravity/config.json` dosyasına ekle:
-   - Sunucu adı: `scholardirect`
-   - Komut: `python`
-   - Dosya: `scholar_direct.py` tam yolu
-   - Kayıt Yeri: `Desktop/Academic_Research_Workspace`
-4. Birlikte gelen beceriyi (`.agent/skills/academic-research-guardian/SKILL.md`) Antigravity beceri klasörüne kopyala.
-5. Kurulumu test et ve 7 aracın hazır olduğunu doğrula.
-````
-
----
----
-
-<a name="-english"></a>
-# 🇬🇧 ENGLISH DOCUMENTATION
-
-ScholarDirect-MCP v1.0 is a free, open-source local Model Context Protocol (MCP) tool designed for students, researchers, and academics.
-
-Commercial AI models often hallucinate fake citations, invent non-existent DOIs, and waste thousands of tokens when you copy and paste raw spreadsheets into chat. ScholarDirect-MCP solves this:
-
-1. **Verified Academic Literature:** Searches real peer-reviewed articles from international repositories (OpenAlex, Crossref) and national Turkish repositories (DergiPark, TR Dizin). Papers with broken DOIs or retraction flags are discarded.
-2. **Real Empirical Data & Math:** Pulls live indicators from World Bank API and Yahoo Finance, running actual econometric regressions and decision models locally on your computer with real Python libraries (`statsmodels`, `lifelines`, `scikit-learn`).
+1. **Verified Academic Literature:** Searches real peer-reviewed articles from international repositories (OpenAlex, Crossref) and national Turkish repositories (DergiPark, TR Dizin). Papers with broken DOIs or retraction flags are automatically excluded.
+2. **Real Empirical Data & Math:** Pulls live indicators from World Bank API and Yahoo Finance, running actual regressions, multi-criteria decision models (AHP-TOPSIS), or machine learning locally with Python (`statsmodels`, `lifelines`, `scikit-learn`).
 3. **Organized Desktop Workspace:** Saves all clean spreadsheets, 300-DPI charts, Python scripts, and formatted Word documents directly into a dedicated folder on your Desktop.
 4. **Up to 95% Token Savings:** Keeps raw data and computation on your local machine, returning only concise summary tables to the AI prompt.
 
@@ -221,21 +59,62 @@ ScholarDirect-MCP does the heavy lifting in Python locally on your machine and o
 
 ---
 
+## 📊 Quick Comparison: ScholarDirect-MCP vs. Other Tools
+
+| Feature | Standard ChatGPT / Claude | Paid Academic SaaS ($30–$100/mo) | ScholarDirect-MCP |
+|---|---|---|---|
+| **Citation Accuracy** | ❌ Can hallucinate non-existent papers. | ⚠️ Limited to partnered journals. | ✅ **100% Real:** Verified via Crossref REST API. |
+| **Turkish Repositories (DergiPark)** | ❌ Cannot scrape DergiPark or TR Dizin. | ❌ Focuses primarily on Western sources. | ✅ **Supported:** Scrapes DergiPark & TR Dizin. |
+| **Data Privacy** | ❌ Data is sent to company cloud servers. | ❌ Datasets are stored in remote clouds. | ✅ **100% Local:** All files stay on your Desktop. |
+| **Statistical Calculations** | ❌ Prone to math hallucination in chat. | ❌ Only summarizes text; no actual modeling. | ✅ **Real Math:** Exact Python estimation (`statsmodels`). |
+| **Turnitin AI Similarity** | ❌ Often scores 60%–80% AI detection. | ⚠️ Repetitive template sentences. | ✅ **Natural Prose:** Organic academic phrasing (<15%). |
+| **Cost** | $20 – $200/month | $30 – $100/month | ✅ **100% Free & Open Source** |
+
+---
+
+## 📁 Organized 5-Folder Desktop Workspace
+
+When you launch a research project, ScholarDirect-MCP automatically creates a structured workspace on your Desktop:
+
+```text
+Desktop/Academic_Research_Workspace/<Project_Name>_<Date>/
+├── 01_Literature_and_Bibliometrics/
+│   ├── verified_literature.xlsx      # Styled Excel workbook with auto-filters & DOI links
+│   ├── verified_references.bib       # Standard BibTeX file for LaTeX & thesis writing
+│   ├── apa7_bibliography.docx        # Ready-to-use Word bibliography with hanging indents
+│   └── bibliometric_gap_report.docx  # Literature gap and journal recommendations report
+├── 02_Empirical_Datasets/
+│   ├── raw_dataset.csv               # Raw series downloaded from API / local file
+│   ├── cleaned_dataset.xlsx          # Multi-sheet cleaned data & correlation matrix
+│   └── descriptive_stats.docx        # APA descriptive statistics tables (N, Mean, SD)
+├── 03_Models_and_Scripts/
+│   └── run_model_<model>.py          # 100% reproducible standalone Python script
+├── 04_Figures_and_Tables/
+│   ├── citation_trend_by_year.png    # 300-DPI publication trajectory chart
+│   ├── methodology_gap_heatmap.png   # 300-DPI methodology co-occurrence heatmap
+│   └── model_diagnostics.png         # Diagnostic plots (residuals, survival, importances)
+└── 05_Manuscript_Drafts/
+    ├── <Project_Name>_manuscript.md  # Research paper draft in Markdown
+    └── <Project_Name>_manuscript.docx # Formatted Word document with standard academic headings
+```
+
+---
+
 ## 🛠️ The 7 Core Tools Explained Simply
 
 1. `search_verified_literature`: Finds real academic papers with active DOIs from OpenAlex and DergiPark, saving an Excel sheet to your Desktop.
-2. `evaluate_paper_fit`: Scores found papers (0–100) based on how well they match your topic and methodology.
+2. `evaluate_paper_fit`: Scores found papers (0–100) based on how well they match your topic and target methodology.
 3. `bibliometric_gap_and_journal_report`: Maps under-researched topics, generates clear charts, and suggests target journals.
 4. `generate_deterministic_apa7`: Formats APA 7th citations and bibliography entries in Word and BibTeX.
 5. `fetch_empirical_dataset`: Downloads real data from the World Bank API or Yahoo Finance and prepares summary statistics tables.
-6. `run_quantitative_or_qualitative_model`: Runs real regressions, decision matrices (AHP-TOPSIS), or machine learning models on your PC.
+6. `run_quantitative_or_qualitative_model`: Runs real regressions (OLS), decision matrices (AHP-TOPSIS), or machine learning models on your PC.
 7. `export_academic_manuscript`: Combines literature, data, and model results into a formatted Word (`.docx`) manuscript draft on your Desktop.
 
 ---
 
 ## 💬 Sample Prompts to Get Started
 
-Paste this prompt directly into Antigravity, Claude Desktop, or Cursor to run an end-to-end project:
+Paste this prompt directly into Antigravity, Claude Desktop, or Cursor to run an end-to-end research project:
 
 ```markdown
 Use ScholarDirect-MCP to run an academic research study on:
@@ -257,7 +136,7 @@ Data privacy rule: Keep all files saved locally on my Desktop; do not leak data 
 
 ## 📦 Setup & Connection
 
-### Manual Installation
+### 1. Manual Installation
 ```bash
 git clone https://github.com/netizen4-bit/scholar_direct.git
 cd scholar_direct
@@ -265,8 +144,9 @@ pip install -r requirements.txt
 playwright install chromium
 ```
 
-### Connect to AI Clients (MCP Configuration)
+### 2. Connect to AI Clients (MCP JSON Configuration)
 Add to your `claude_desktop_config.json`, `config.json`, or Cursor settings:
+
 ```json
 {
   "mcpServers": {
