@@ -22,17 +22,27 @@
 <a name="-english"></a>
 # 🇬🇧 ENGLISH DOCUMENTATION
 
-A local, agentic Model Context Protocol (MCP) framework and autonomous quantitative research intelligence engine that combines **verified multi-repository literature discovery** (OpenAlex, Crossref, DergiPark, TR Dizin), a **deterministic 4-tier paper fit evaluation engine**, **bibliometric gap analysis with 300-DPI charts**, **open-source empirical dataset ingestion** (World Bank API, Yahoo Finance, local CSV/XLSX), and **rigorous econometric/statistical/MCDM modeling** (OLS, Panel FE/RE, Cox Survival, Machine Learning, AHP-TOPSIS, Delphi-Kendall-CLD) — all running locally with zero recurring SaaS subscriptions and slashing LLM context token consumption by over **95%**.
+ScholarDirect-MCP v1.0 is an open-source, local Model Context Protocol (MCP) framework and quantitative academic research engine. It unifies **verified multi-repository literature discovery** (OpenAlex, Crossref, DergiPark, TR Dizin), a **deterministic 4-tier paper fit evaluation engine**, **bibliometric gap analysis with 300-DPI publication charts**, **open-source empirical dataset ingestion** (World Bank API, Yahoo Finance, local CSV/XLSX), and **rigorous econometric/statistical/MCDM modeling** (OLS, Panel FE/RE, Cox Survival, Machine Learning, AHP-TOPSIS, Delphi-Kendall-CLD) — running entirely on your local machine and reducing LLM context token expenditure by over **95%**.
 
-ScholarDirect connects your AI coding assistant (**Antigravity**, **Claude Desktop**, **Cursor**) or local **Ollama** agents directly to live academic research pipelines. It bypasses hallucinated citations by enforcing deterministic Crossref REST API verification (verifying active HTTP 200 status, volume, issue, page numbers, and retraction flags), scrapes Turkish national peer-reviewed literature across DergiPark via a cookieless 2-Tier Waterfall (`curl_cffi` $\to$ Playwright), scores candidate-topic compatibility through a dynamic 4-tier weighted academic gate, executes real mathematical estimators locally via `statsmodels`, `lifelines`, and `scikit-learn`, and archives all research assets into an organized 5-folder workspace on your Desktop.
+ScholarDirect bridges AI coding assistants (**Antigravity**, **Claude Desktop**, **Cursor**) and local **Ollama** models directly to live academic research workflows. It eliminates citation hallucination via deterministic Crossref REST API verification (confirming active HTTP 200 resolution, volume, issue, page numbers, and retraction flags), scrapes Turkish national peer-reviewed literature across DergiPark via a cookieless 2-Tier Waterfall (`curl_cffi` $\to$ Playwright), evaluates methodology-topic alignment through a dynamic 4-tier academic gate, executes mathematical estimators locally through `statsmodels`, `lifelines`, and `scikit-learn`, and systematically organizes all research outputs on your Desktop.
 
-**Built for Immediate Academic ROI:** ScholarDirect replaces **$30–$100/month academic research, systematic review, and citation SaaS tools** (such as Scite, Consensus, Elicit, Rayyan, or EndNote) by executing live DOI verification, empirical data ingestion, econometric modeling, and executive Word (`.docx`) and Excel (`.xlsx`) report formatting locally on your machine at zero recurring cost.
+---
+
+### 🔒 Sovereign Data Privacy & Air-Gapped Local Desktop Persistence
+
+Commercial cloud academic AI tools (Elicit, Consensus, Scite, ChatGPT Plus) require researchers to upload unpublished manuscripts, proprietary empirical spreadsheets, and institutional financial datasets to remote servers. This architecture introduces severe risks of confidential data leakage, intellectual property exposure, and unauthorized inclusion into third-party LLM training pipelines.
+
+**ScholarDirect-MCP guarantees 100% sovereign data privacy:**
+- **Zero Cloud Exposure:** All empirical data fetching, cleaning, econometric execution, and manuscript synthesis occur strictly on your local hardware. No research data or prompt payloads are stored in remote clouds.
+- **Automated Desktop Persistence:** Every project automatically creates and populates a dedicated, timestamped folder directly on your physical machine:
+  `Desktop/Academic_Research_Workspace/<Project_Slug>_<YYYYMMDD>/`
+- **Air-Gapped Confidentiality:** Unpublished empirical figures, corporate microdata, healthcare records, and draft findings remain exclusively under your custody. You retain complete sovereignty over your intellectual property.
 
 ---
 
 ## ⚡ Token Effectiveness & Benchmark
 
-AI coding agents running unconstrained web-scraping and literature review loops quickly suffer from **context window exhaustion** (ingesting tens of thousands of tokens of noisy HTML, broken links, raw CSV files, and hallucinated paper citations).
+AI coding agents executing unconstrained web scraping and literature review loops suffer from **context window exhaustion** by ingesting tens of thousands of tokens of noisy HTML, broken links, raw CSV files, and hallucinated citations.
 
 ScholarDirect-MCP v1.0 pairs native FastMCP backend tools with the structured **Academic Research Guardian Skill** (`academic-research-guardian`) to enforce deterministic filtering before text synthesis:
 
@@ -52,18 +62,16 @@ ScholarDirect-MCP v1.0 pairs native FastMCP backend tools with the structured **
 
 ## 📊 Academic Research Industry Competitive Analysis
 
-How ScholarDirect-MCP v1.0 compares across the academic AI landscape:
-
 | Capability / Feature | Vanilla LLMs (ChatGPT / Claude Web) | Vector / RAG Search Academic Bots | Cloud Academic SaaS ($30–$100/mo) | ScholarDirect-MCP v1.0 (Local Hybrid Engine) |
 |---|---|---|---|---|
-| **1. Citation Hallucination Defense** | ❌ **High Risk:** Fabricates authors, non-existent titles, and ghost DOIs. | ⚠️ **Moderate:** Retrieves snippets from cached indexes; DOIs frequently 404. | ⚠️ **Variable:** Relies on third-party aggregators; often lacks national indexing. | ✅ **100% Deterministic:** Pings Crossref REST API for active HTTP 200 resolution; discards retracted papers. |
-| **2. Turkish Literature Coverage** | ❌ **Near Zero:** Weak indexing of national Turkish journals. | ❌ **Neglected:** Excludes DergiPark and TR Dizin repositories. | ⚠️ **Partial:** Limited coverage of non-English regional publications. | ✅ **Native 2-Tier Waterfall:** Scrapes `DergiPark` & `TR Dizin` via `curl_cffi` + Playwright fallback. |
-| **3. Methodological Integrity Gate** | ❌ **Synthetic Hallucination:** Invents non-existent hybrid algorithms and pseudo-models. | ❌ **None:** Summarizes text without checking mathematical validity. | ⚠️ **Black-Box:** Provides proprietary AI scores without open equations. | ✅ **Strict Whitelist:** Enforces `ESTABLISHED_METHODOLOGIES` whitelist; rejects AI-invented pseudo-methods. |
-| **4. Real Diagnostic Batteries** | ❌ **None:** Fabricates regression outputs and arbitrary p-values. | ❌ **None:** Document search only; cannot run statistical tests. | ❌ **None:** Requires exporting data to separate software (SPSS, Stata, R). | ✅ **Automated Diagnostics:** Computes real VIF ($<5.0$), Breusch-Pagan, Hausman, Schoenfeld residuals, and AHP $CR < 0.10$. |
-| **5. Empirical Data Ingestion** | ❌ **Manual Upload:** Wastes context tokens pasting raw CSV chunks. | ❌ **Unsupported:** Literature only. | ⚠️ **Limited:** Charges extra for external data connectors. | ✅ **Direct REST Ingestion:** Connects directly to World Bank API, Yahoo Finance, and local CSV/XLSX at zero token cost. |
-| **6. Turnitin AI Detection Defense** | ❌ **Severe Flags:** Monotone 20-word sentences trigger $70\%-90\%$ AI similarity index. | ❌ **Robotic Output:** Heavy AI template patterns flagged by Turnitin/GPTZero. | ⚠️ **Generic:** AI writing assistants lack domain-specific burstiness rules. | ✅ **Guardian Protocol (<15%):** Asymmetric burstiness optimization, anti-translationese, and banned cliché purge. |
-| **7. Publication-Ready Formatting** | ❌ **Plain Markdown:** Requires hours of manual re-formatting into Word/Excel. | ⚠️ **BibTeX Only:** No automated visual charts or formatted tables. | ⚠️ **Proprietary Export:** Rigid PDF exports without reproducible scripts. | ✅ **Executive Office Suite:** Styled `.xlsx` matrices, APA `.docx` manuscripts, 300-DPI `.png` charts, and standalone `.py` scripts. |
-| **8. Cost & Data Privacy** | ⚠️ **Subscription ($20–$200/mo):** Heavy token burn; data logged on external servers. | ⚠️ **Token Heavy:** Ingests unconstrained text context. | ❌ **Expensive ($360–$1,200/yr):** Paywalled credit systems and vendor lock-in. | ✅ **100% Free & Open-Source:** Runs locally on your machine with 96.5% token savings; research never leaves local storage. |
+| **1. Data Privacy & Cloud Storage Protection** | ❌ **High Risk:** User prompts and uploaded data logged on remote cloud servers. | ⚠️ **Moderate:** Queries cached on external RAG cloud databases. | ❌ **Cloud-Hosted:** Uploads confidential datasets to third-party proprietary clouds. | ✅ **100% Local & Sovereign:** All datasets and drafts saved directly to your Desktop; zero cloud data leakage. |
+| **2. Citation Hallucination Defense** | ❌ **High Risk:** Fabricates authors, non-existent titles, and ghost DOIs. | ⚠️ **Moderate:** Retrieves cached snippets; DOIs frequently 404. | ⚠️ **Variable:** Relies on third-party aggregators; often lacks national indexing. | ✅ **100% Deterministic:** Pings Crossref REST API for active HTTP 200 resolution; discards retracted papers. |
+| **3. Turkish Literature Coverage** | ❌ **Near Zero:** Weak indexing of national Turkish journals. | ❌ **Neglected:** Excludes DergiPark and TR Dizin repositories. | ⚠️ **Partial:** Limited coverage of non-English regional publications. | ✅ **Native 2-Tier Waterfall:** Scrapes `DergiPark` & `TR Dizin` via `curl_cffi` + Playwright fallback. |
+| **4. Methodological Integrity Gate** | ❌ **Synthetic Hallucination:** Invents non-existent hybrid algorithms and pseudo-models. | ❌ **None:** Summarizes text without checking mathematical validity. | ⚠️ **Black-Box:** Provides proprietary AI scores without open equations. | ✅ **Strict Whitelist:** Enforces `ESTABLISHED_METHODOLOGIES` whitelist; rejects AI-invented pseudo-methods. |
+| **5. Real Diagnostic Batteries** | ❌ **None:** Fabricates regression outputs and arbitrary p-values. | ❌ **None:** Document search only; cannot run statistical tests. | ❌ **None:** Requires exporting data to separate software (SPSS, Stata, R). | ✅ **Automated Diagnostics:** Computes real VIF ($<5.0$), Breusch-Pagan, Hausman, Schoenfeld residuals, and AHP $CR < 0.10$. |
+| **6. Empirical Data Ingestion** | ❌ **Manual Upload:** Wastes context tokens pasting raw CSV chunks. | ❌ **Unsupported:** Literature only. | ⚠️ **Limited:** Charges extra for external data connectors. | ✅ **Direct REST Ingestion:** Connects directly to World Bank API, Yahoo Finance, and local CSV/XLSX at zero token cost. |
+| **7. Turnitin AI Detection Defense** | ❌ **Severe Flags:** Monotone 20-word sentences trigger $70\%-90\%$ AI similarity index. | ❌ **Robotic Output:** Heavy AI template patterns flagged by Turnitin/GPTZero. | ⚠️ **Generic:** AI writing assistants lack domain-specific burstiness rules. | ✅ **Guardian Protocol (<15%):** Asymmetric burstiness optimization, anti-translationese, and banned cliché purge. |
+| **8. Publication-Ready Formatting** | ❌ **Plain Markdown:** Requires hours of manual re-formatting into Word/Excel. | ⚠️ **BibTeX Only:** No automated visual charts or formatted tables. | ⚠️ **Proprietary Export:** Rigid PDF exports without reproducible scripts. | ✅ **Executive Office Suite:** Styled `.xlsx` matrices, APA `.docx` manuscripts, 300-DPI `.png` charts, and standalone `.py` scripts. |
 
 ---
 
@@ -105,6 +113,7 @@ How ScholarDirect-MCP v1.0 compares across the academic AI landscape:
           🛑 PURGE FROM CORPUS                                 ▼
           (Zero citation hallucination)            ┌────────────────────────────┐
                                                    │ 5-FOLDER DESKTOP WORKSPACE │
+                                                   │ (Local Air-Gapped Storage) │
                                                    ├────────────────────────────┤
                                                    │ 01_Literature_Bibliometrics│
                                                    │ 02_Empirical_Datasets      │
@@ -143,8 +152,6 @@ scholar_direct/
 ---
 
 ## 🛠️ MCP Tools Reference (Full 7-Tool Suite)
-
-ScholarDirect-MCP v1.0 exposes **7 native FastMCP tools** designed for the complete research lifecycle:
 
 ### 1. `search_verified_literature`
 * **Input:** `query` (str), `language` (str, default "en"), `min_year` (int, default 2018), `min_citations` (int, default 5), `limit` (int, default 15), `project_name` (str, default "Research_Project")
@@ -189,10 +196,9 @@ ScholarDirect-MCP v1.0 exposes **7 native FastMCP tools** designed for the compl
 
 ## 💬 Sample Prompt Structure to Run Research Efficiently (English)
 
-To maximize token efficiency and minimize redundant conversational turns, use structured **Single-Anchor Autonomous Prompts**. These prompts instruct your AI agent to orchestrate the MCP tools sequentially without stopping for trivial intermediate confirmations:
+To maximize token efficiency and minimize redundant conversational turns, use structured **Single-Anchor Autonomous Prompts**:
 
 ### 🎯 Prompt 1: Turnkey End-to-End Academic Research Paper
-Copy and paste this prompt to conduct a complete empirical study from scratch:
 
 ```markdown
 Act as a Senior Quantitative Academic Researcher and use ScholarDirect-MCP to conduct a complete, publication-ready empirical study on:
@@ -207,11 +213,10 @@ Execute the research workflow autonomously through the following steps:
 6. ECONOMETRIC MODEL: Run `run_quantitative_or_qualitative_model` with model_type="ols_regression" using the fetched dataset to estimate the specification and compute VIF, Breusch-Pagan, and robust standard errors.
 7. MANUSCRIPT DRAFT: Run `export_academic_manuscript` to compile the full paper draft into Word (.docx) and Markdown (.md) under Desktop/Academic_Research_Workspace/.
 
-Enforce the Academic Research Guardian Skill rules: ensure asymmetric sentence burstiness, zero banned AI clichés, and a Turnitin-proof (<15%) human academic tone.
+Enforce the Academic Research Guardian Skill rules: ensure asymmetric sentence burstiness, zero banned AI clichés, and a Turnitin-proof (<15%) human academic tone. Keep all empirical files strictly saved to the local Desktop to prevent cloud data leakage.
 ```
 
 ### 🔬 Prompt 2: Rapid Multi-Criteria Decision Model (AHP-TOPSIS)
-For management, operations, and policy prioritization studies:
 
 ```markdown
 Using ScholarDirect-MCP, execute a multi-criteria decision analysis (MCDM) project titled "Sustainable_Supplier_Selection_MCDM":
@@ -240,8 +245,6 @@ playwright install chromium
 ```
 
 ### 3. Automatic Installation in Google Antigravity
-If you are using Google Antigravity, simply paste the following instruction into your chat:
-
 ````markdown
 Install and configure the ScholarDirect MCP server into my Antigravity setup:
 
@@ -259,10 +262,6 @@ Install and configure the ScholarDirect MCP server into my Antigravity setup:
 ---
 
 ## 🔌 Connecting to Your AI Client (MCP JSON Configuration)
-
-Add ScholarDirect to your MCP configuration file (e.g. `claude_desktop_config.json`, `config.json`, or Cursor MCP settings):
-
-> ⚠️ **Note on Windows Paths:** In JSON strings, backslashes must be escaped (`\\`) or written with forward slashes (`/`).
 
 ```json
 {
@@ -286,90 +285,95 @@ Add ScholarDirect to your MCP configuration file (e.g. `claude_desktop_config.js
 <a name="-türkçe"></a>
 # 🇹🇷 TÜRKÇE DOKÜMANTASYON
 
-ScholarDirect-MCP v1.0, **doğrulanmış çoklu akademik kaynak taraması** (OpenAlex, Crossref, DergiPark, TR Dizin), **deterministik 4 aşamalı makale uygunluk değerlendirmesi**, **300-DPI grafiklerle bibliyometrik boşluk analizi**, **açık kaynaklı ampirik veri çekme** (Dünya Bankası API, Yahoo Finance, yerel CSV/XLSX) ve **ileri düzey ekonometrik/istatistiksel/ÇKKV modellemeyi** (EKK, Panel Veri, Cox Sağkalım, Makine Öğrenmesi, AHP-TOPSIS, Delphi-Kendall-CLD) tek bir çatı altında birleştiren yerel ve otonom bir Model Context Protocol (MCP) araştırma ekosistemidir.
+ScholarDirect-MCP v1.0; uluslararası ve ulusal hakemli literatür keşfini (**OpenAlex**, **Crossref**, **DergiPark**, **TR Dizin**), deterministik 4 aşamalı makale uygunluk değerlendirmesini, 300-DPI grafiklerle bibliyometrik araştırma boşluğu analizini, açık kaynaklı ampirik veri teminini (**Dünya Bankası API**, **Yahoo Finance**, yerel CSV/XLSX) ve ileri ekonometrik/karar alma modellemesini (**EKK**, **Panel Veri**, **Cox Sağkalım**, **Makine Öğrenmesi**, **AHP-TOPSIS**, **Delphi-Kendall-CLD**) tek bir çatı altında birleştiren yerel bir Model Context Protocol (MCP) araştırma mimarisidir.
 
-Tüm işlemler harici bulut SaaS aboneliklerine ihtiyaç duyulmadan, kullanıcının kendi yerel bilgisayarında çalışır ve LLM bağlam penceresi (context window) token tüketimini **%95'in üzerinde** azaltır.
+Sistem, yapay zekâ asistanlarını (**Antigravity**, **Claude Desktop**, **Cursor**) veya yerel **Ollama** modellerini doğrudan bilimsel araştırma hatlarına bağlar. Temel gayesi; yapay zekânın uydurduğu sahte atıfları (hallucinated citations) Crossref REST API doğrulamasıyla (HTTP 200 yanıtı, cilt, sayı, sayfa aralığı ve geri çekilme denetimi) tamamen bertaraf etmek, `curl_cffi` ve Playwright ile DergiPark üzerindeki ulusal literatürü taramak, ampirik analizleri matematiksel geçerliliği tescilli modellerle yürütmek ve LLM bağlam penceresi token harcamasını **%95'in üzerinde** düşürmektir.
 
-ScholarDirect; yapay zeka asistanınızı (**Antigravity**, **Claude Desktop**, **Cursor**) veya yerel **Ollama** modellerinizi doğrudan gerçek akademik araştırma süreçlerine bağlar. Crossref REST API üzerinden deterministik DOI doğrulaması yaparak (HTTP 200 yanıtı, cilt, sayı, sayfa aralığı ve geri çekilme/retraction kontrolü) yapay zeka tarafından uydurulan sahte kaynakları (hallucinated citations) tamamen eler. `curl_cffi` ve Playwright ile DergiPark ve TR Dizin'deki hakemli ulusal yayınları tarar, ampirik verileri Dünya Bankası'ndan otomatik indirir, gerçek tanı testleriyle ekonometrik modelleri tahmin eder ve tüm çıktıları Masaüstünüzde 5 alt klasörden oluşan organize bir araştırma çalışma alanında arşivler.
+---
 
-**Akademik Yatırım Getirisi (ROI):** ScholarDirect; aylık **30$ – 100$** maliyeti olan akademik araştırma, sistematik derleme ve atıf yazılımlarının (Scite, Consensus, Elicit, Rayyan, EndNote vb.) yaptığı tüm işlevleri sıfır maliyetle ve tam veri gizliliğiyle yerel makinenizde gerçekleştirir.
+### 🔒 Yerel Masaüstü İzolasyonu ve Veri Gizliliği Güvencesi
+
+Bulut tabanlı ticari yapay zekâ platformları (Elicit, Consensus, Scite, ChatGPT Plus vb.); araştırmacıların yayımlanmamış ham veri setlerini, kurumsal mali tablolarını ve çalışma hipotezlerini merkezi uzak sunuculara yükler. Bu durum, telif hakkı ihlallerine, fikri mülkiyet hırsızlığına ve gizli verilerin ticari LLM modellerinin eğitim havuzlarına sızmasına zemin hazırlar.
+
+**ScholarDirect-MCP, araştırmacıya tam veri egemenliği sağlar:**
+- **Sıfır Bulut Sızıntısı:** Ampirik verilerin çekilmesi, ayıklanması, ekonometrik tahminler ve makale yazımı münhasıran yerel donanımınızda icra edilir. Hiçbir araştırma verisi veya prompt girdisi uzak bulut sunucularında tutulmaz.
+- **Doğrudan Masaüstü Arşivleme:** Her proje için kullanıcının kendi işletim sisteminde otomatik olarak şu yapı oluşturulur:
+  `Desktop/Academic_Research_Workspace/<Proje_Adi>_<Tarih>/`
+- **Fikri Mülkiyet Koruması:** Yayımlanmamış ekonometrik sonuçlar, şirket mikro verileri, anket yanıtları ve nihai Word taslakları yalnızca sizin yerel diskinizde muhafaza edilir. Araştırmanızın gizliliği tam anlamıyla güvence altındadır.
 
 ---
 
 ## ⚡ Token Verimliliği ve Karşılaştırmalı Kıyaslama
 
-Serbest arama yapan standart yapay zeka asistanları, ham HTML kodlarını, çalışmayan linkleri, büyük veri setlerini ve uydurma kaynakları bağlama dahil ettiklerinde çok kısa sürede **bağlam penceresi tükenmesi (context window exhaustion)** sorunuyla karşılaşır.
+Serbest arama yürüten standart yapay zekâ modelleri; ham HTML kodlarını, çalışmayan web bağlantılarını, büyük veri tablolarını ve uydurma kaynakçaları bağlama dahil ettiklerinde çok geçmeden **bağlam penceresi tükenmesi (context window exhaustion)** sorunuyla karşılaşır.
 
-ScholarDirect-MCP v1.0, yerel FastMCP araçlarını **Academic Research Guardian Skill** (`academic-research-guardian`) kurallarıyla birleştirerek metin üretiminden önce deterministik filtreleme uygular:
+ScholarDirect-MCP v1.0, yerel FastMCP araçlarını **Academic Research Guardian Skill** (`academic-research-guardian`) direktifleriyle birleştirerek metin üretiminden önce deterministik filtreleme uygular:
 
 ### 6 Aşamalı Akademik Araştırma Döngüsü Karşılaştırması
 
-| Araştırma Aşaması | Standart Yapay Zeka (Araçsız / Vanilla) | ScholarDirect-MCP v1.0 + Guardian Skill | Token Tasarrufu |
+| Araştırma Aşaması | Standart LLM Döngüsü (Araçsız / Ham Prompting) | ScholarDirect-MCP v1.0 + Guardian Skill | Token Tasarrufu |
 |---|---|---|---|
-| **1. Literatür Taraması & Veri Çekme** | **~120.000 token**<br>*(Ham web sayfaları, doğrulanamayan PDF'ler, ölü linkler)* | **~3.500 token**<br>*(Önceden filtrelenmiş OpenAlex + DergiPark özet tablosu)* | **-%97,1** |
-| **2. 4 Aşamalı Makale Uygunluk Değerlendirmesi** | **~85.000 token**<br>*(Modelin metodoloji ve alan uyumu hakkında tahmin yürütmesi)* | **~2.200 token**<br>*(Yerel Python matematiği; anında 5 dallı kesin karar)* | **-%97,4** |
-| **3. Bibliyometrik Boşluk ve Strateji** | **~90.000 token**<br>*(Grafiksiz, genel ve yüzeysel model önerileri)* | **~2.500 token**<br>*(Birlikte oluşum matrisi + diske kaydedilen 300-DPI grafikler)* | **-%97,2** |
-| **4. Ampirik Veri & Betimsel İstatistikler** | **~180.000 token**<br>*(Sohbete ham CSV yapıştırma; hatalı aritmetik hesaplar)* | **~3.000 token**<br>*(Dünya Bankası API çekimi; yerel Scipy APA matrisi)* | **-%98,3** |
-| **5. Ekonometrik / İstatistiksel Modelleme** | **~250.000 token**<br>*(Sohbette 15+ tur Python hata ayıklama ve kod düzeltme)* | **~3.500 token**<br>*(Yerel `statsmodels`/`lifelines` çalıştırması; tanı testleri)* | **-%98,6** |
-| **6. Makale Yazımı ve Turnitin İnsansılaştırma** | **~220.000 token**<br>*(Turnitin %60+ benzerliğini kırmak için defalarca yeniden yazma)* | **~18.000 token**<br>*(İlk seferde Turnitin <%15 garantili, APA uyumlu Word çıktısı)* | **-%91,8** |
+| **1. Literatür Taraması & Çekimi** | **~120.000 token**<br>*(Ham HTML DOM ağaçları, doğrulanamayan PDF'ler, ölü linkler)* | **~3.500 token**<br>*(Önceden filtrelenmiş OpenAlex + DergiPark özet tablosu)* | **-%97,1** |
+| **2. 4 Aşamalı Makale Değerlendirmesi** | **~85.000 token**<br>*(Modelin metodoloji ve alan uyumu hakkında afaki tahminleri)* | **~2.200 token**<br>*(Yerel Python matematiği; anında 5 dallı kesin karar)* | **-%97,4** |
+| **3. Bibliyometrik Boşluk Analizi** | **~90.000 token**<br>*(Grafiksiz, genel geçer ve yüzeysel model tavsiyeleri)* | **~2.500 token**<br>*(Birlikte oluşum matrisi + diske kaydedilen 300-DPI grafikler)* | **-%97,2** |
+| **4. Ampirik Veri & Betimsel İstatistikler** | **~180.000 token**<br>*(Sohbete ham CSV yapıştırma; hatalı aritmetik hesaplamalar)* | **~3.000 token**<br>*(Dünya Bankası API çekimi; yerel Scipy APA matrisi)* | **-%98,3** |
+| **5. Ekonometrik Modelleme** | **~250.000 token**<br>*(Sohbette 15+ tur Python hata ayıklama ve kod düzeltme)* | **~3.500 token**<br>*(Yerel `statsmodels`/`lifelines` çalıştırması; tanı testleri)* | **-%98,6** |
+| **6. Makale Yazımı ve İnsansılaştırma** | **~220.000 token**<br>*(Turnitin %60+ benzerliğini kırmak için defalarca yeniden yazma)* | **~18.000 token**<br>*(İlk seferde Turnitin <%15 garantili, APA uyumlu Word çıktısı)* | **-%91,8** |
 | **Toplam Harcanan Bağlam Tokenı** | **~945.000 token** | **~32.700 token** | **-%96,5 Toplam Tasarruf** |
 
 ---
 
 ## 📊 Akademik Araştırma Sektörel Karşılaştırma Matrisi
 
-ScholarDirect-MCP v1.0'ın diğer akademik yapay zeka araçlarıyla karşılaştırması:
-
 | Yetenek / Özellik | Standart LLM'ler (ChatGPT / Claude Web) | Vektör / RAG Akademik Arama Botları | Bulut Tabanlı Akademik SaaS (30–100$/ay) | ScholarDirect-MCP v1.0 (Yerel Hibrit Motor) |
 |---|---|---|---|---|
-| **1. Atıf Halüsinasyonu Koruması** | ❌ **Yüksek Risk:** Olmayan yazarlar, uydurma başlıklar ve sahte DOI üretir. | ⚠️ **Orta:** Eski indekslerden parça getirir; linklerin çoğu 404 verir. | ⚠️ **Değişken:** Üçüncü taraf indekslere bağımlıdır; ulusal yayınları görmez. | ✅ **%100 Deterministik:** Crossref REST API'ye HTTP 200 doğrulaması yapar; geri çekilen yayınları eler. |
-| **2. Türkçe Literatür Kapsamı** | ❌ **Neredeyse Sıfır:** Türk hakemli dergilerini tarayamaz. | ❌ **Yok:** DergiPark ve TR Dizin veritabanlarını kapsamaz. | ⚠️ **Kısıtlı:** İngilizce dışı bölgesel yayınlarda yetersizdir. | ✅ **Çift Kademeli Tarama:** DergiPark ve TR Dizin'i `curl_cffi` ve Playwright ile eksiksiz tarar. |
-| **3. Metodolojik Geçerlilik Sınaması** | ❌ **Sentetik Uydurma:** Literatürde olmayan sahte melez yöntemler kurgular. | ❌ **Yok:** Yalnızca metin özetler; yöntemin matematiksel geçerliliğine bakmaz. | ⚠️ **Kapalı Kutu:** Formülleri göstermeden yapay zeka puanı üretir. | ✅ **Kesin Whitelist:** Yalnızca `ESTABLISHED_METHODOLOGIES` listesindeki gerçek yöntemleri onaylar. |
-| **4. Gerçek Ekonometrik Tanı Testleri** | ❌ **Yok:** Katsayıları ve p-değerlerini kafadan uydurur. | ❌ **Yok:** Sadece belge arar; istatistiksel analiz yapamaz. | ❌ **Yok:** Veriyi SPSS, Stata veya R'a aktarmanızı ister. | ✅ **Otomasyonlu Tanı:** VIF ($<5.0$), Breusch-Pagan, Hausman, Schoenfeld ve AHP $CR < 0.10$ testlerini hesaplar. |
-| **5. Ampirik Veri İçe Aktarımı** | ❌ **Elle Kopyalama:** Sohbet penceresine ham CSV yapıştırarak token yakar. | ❌ **Desteklenmiyor:** Yalnızca makale metinleriyle çalışır. | ⚠️ **Kısıtlı:** Dış veri bağlantıları için ek ücret talep eder. | ✅ **Doğrudan REST API:** Dünya Bankası, Yahoo Finance ve yerel CSV'leri sıfır token maliyetiyle çeker. |
-| **6. Turnitin AI Dedektörü Geçirgenliği** | ❌ **Ağır Takılma:** Monoton cümle yapıları Turnitin'de %70-%90 AI benzerliği üretir. | ❌ **Robotik Dil:** Şablon cümleler AI tespit yazılımlarınca anında işaretlenir. | ⚠️ **Genel:** Akademik ritim asimetrisi kurgulayamaz. | ✅ **Guardian Protokolü (<%15):** Cümle uzunluğu asimetrisi, anti-translationese ve yasaklı kalıp temizliği uygular. |
-| **7. Yayına Hazır Çıktı Formatı** | ❌ **Düz Markdown:** Word veya Excel'e aktarmak için saatlerce uğraştırır. | ⚠️ **Yalnızca BibTeX:** Görsel grafik veya biçimlendirilmiş tablo üretmez. | ⚠️ **Kapalı Format:** Kodları ve analiz adımlarını paylaşmaz. | ✅ **Yönetici Çıktıları:** Renkli `.xlsx` matrisleri, APA `.docx` taslakları, 300-DPI grafikler ve çalıştırılabilir `.py` kodları. |
-| **8. Maliyet ve Veri Gizliliği** | ⚠️ **Abonelik (20–200$/ay):** Yüksek token harcaması; veriler sunucularda saklanır. | ⚠️ **Yüksek Token:** Denetimsiz bağlam tüketimi. | ❌ **Pahalı (360–1200$/yıl):** Kredi limitleri ve üreticiye bağımlılık. | ✅ **%100 Ücretsiz & Açık Kaynak:** Kendi bilgisayarınızda %96,5 token tasarrufuyla çalışır; veriniz dışarı çıkmaz. |
+| **1. Veri Gizliliği ve Masaüstü İzolasyonu** | ❌ **Yüksek Risk:** Veriler bulut sunucularında kaydedilir ve modele yedirilir. | ⚠️ **Orta:** Sorgular harici RAG veritabanlarında saklanır. | ❌ **Bulut Bağımlı:** Ham veriyi üçüncü taraf ticari sunuculara yükler. | ✅ **%100 Yerel Diskte:** Tüm veri setleri ve taslaklar doğrudan Masaüstüne kaydedilir; veri sızıntısı imkânsızdır. |
+| **2. Atıf Halüsinasyonu Koruması** | ❌ **Yüksek Risk:** Hayali yazarlar, uydurma başlıklar ve sahte DOI üretir. | ⚠️ **Orta:** Eski indekslerden parça getirir; linklerin çoğu 404 verir. | ⚠️ **Değişken:** Üçüncü taraf indekslere bağımlıdır; ulusal yayınları görmez. | ✅ **%100 Deterministik:** Crossref REST API'ye HTTP 200 doğrulaması yapar; geri çekilen yayınları eler. |
+| **3. Türkçe Literatür Kapsamı** | ❌ **Neredeyse Sıfır:** Türk hakemli dergilerini tarayamaz. | ❌ **Yok:** DergiPark ve TR Dizin veritabanlarını kapsamaz. | ⚠️ **Kısıtlı:** İngilizce dışı bölgesel yayınlarda yetersizdir. | ✅ **Çift Kademeli Tarama:** DergiPark ve TR Dizin'i `curl_cffi` ve Playwright ile eksiksiz tarar. |
+| **4. Metodolojik Geçerlilik Sınaması** | ❌ **Sentetik Uydurma:** Literatürde olmayan sahte melez yöntemler kurgular. | ❌ **Yok:** Yalnızca metin özetler; yöntemin matematiksel geçerliliğine bakmaz. | ⚠️ **Kapalı Kutu:** Formülleri göstermeden yapay zekâ puanı üretir. | ✅ **Kesin Whitelist:** Yalnızca `ESTABLISHED_METHODOLOGIES` listesindeki gerçek yöntemleri onaylar. |
+| **5. Gerçek Ekonometrik Tanı Testleri** | ❌ **Yok:** Katsayıları ve p-değerlerini afaki uydurur. | ❌ **Yok:** Sadece belge arar; istatistiksel analiz yapamaz. | ❌ **Yok:** Veriyi SPSS, Stata veya R'a aktarmanızı ister. | ✅ **Otomasyonlu Tanı:** VIF ($<5.0$), Breusch-Pagan, Hausman, Schoenfeld ve AHP $CR < 0.10$ testlerini hesaplar. |
+| **6. Ampirik Veri İçe Aktarımı** | ❌ **Elle Kopyalama:** Sohbet penceresine ham CSV yapıştırarak token yakar. | ❌ **Desteklenmiyor:** Yalnızca makale metinleriyle çalışır. | ⚠️ **Kısıtlı:** Dış veri bağlantıları için ek ücret talep eder. | ✅ **Doğrudan REST API:** Dünya Bankası, Yahoo Finance ve yerel CSV'leri sıfır token maliyetiyle çeker. |
+| **7. Turnitin AI Dedektörü Geçirgenliği** | ❌ **Ağır Takılma:** Monoton cümle yapıları Turnitin'de %70-%90 AI benzerliği üretir. | ❌ **Robotik Dil:** Şablon cümleler AI tespit yazılımlarınca anında işaretlenir. | ⚠️ **Genel:** Akademik ritim asimetrisi kurgulayamaz. | ✅ **Guardian Protokolü (<%15):** Cümle uzunluğu asimetrisi, anti-translationese ve yasaklı kalıp temizliği uygular. |
+| **8. Yayına Hazır Çıktı Formatı** | ❌ **Düz Markdown:** Word veya Excel'e aktarmak için saatlerce uğraştırır. | ⚠️ **Yalnızca BibTeX:** Görsel grafik veya biçimlendirilmiş tablo üretmez. | ⚠️ **Kapalı Format:** Kodları ve analiz adımlarını paylaşmaz. | ✅ **Yönetici Çıktıları:** Renkli `.xlsx` matrisleri, APA `.docx` taslakları, 300-DPI grafikler ve çalıştırılabilir `.py` kodları. |
 
 ---
 
-## 🛠️ 7 Temel MCP Aracının Özeti
+## 🛠️ 7 Temel MCP Aracının Fonksiyonel Dökümü
 
-1. `search_verified_literature`: OpenAlex, Crossref ve DergiPark üzerinden gerçek DOI'ye sahip hakemli makaleleri keşfeder; `verified_literature.xlsx` ve `.json` olarak Masaüstüne kaydeder.
-2. `evaluate_paper_fit`: Aday makaleleri 4 aşamalı deterministik formülle puanlar (Alan Uyumu %40, Metodolojik Özgünlük %30, Dergi Seviyesi %20, DOI Kapısı %10); sentetik yöntemleri eler.
-3. `bibliometric_gap_and_journal_report`: Metodoloji-tema çakışma matrisini çıkarır; SSCI ve Scopus Q1-Q4 dergileri hedefleyen 3 somut model kurgular; 300-DPI grafikler ve Word raporu üretir.
-4. `generate_deterministic_apa7`: Doğrulanmış DOI'lerden çift dilli metin içi atıfları (`Yazar ve Yazar, 2024` / `Yazar vd., 2023`) ve APA 7 kaynakçasını oluşturur; `.bib` ve `.docx` olarak kaydeder.
-5. `fetch_empirical_dataset`: Dünya Bankası veya Yahoo Finance API'lerinden gerçek ampirik verileri indirir; eksik verileri temizler; APA betimsel istatistik ve korelasyon matrislerini hazırlar.
-6. `run_quantitative_or_qualitative_model`: EKK (sağlam standart hatalar, VIF, heteroskedastisite), Cox Sağkalım (Schoenfeld testi), Rastgele Orman (çapraz doğrulama, önem dereceleri) veya AHP-TOPSIS ($CR < 0.10$ tutarlılık şartı) modellerini yerel Python ile tahmin eder; çalıştırılabilir `.py` kodunu ve tanı grafiğini üretir.
-7. `export_academic_manuscript`: Literatür, ampirik veriler, tanı testleri ve APA kaynakçasını birleştirerek doğrudan hakemli dergiye sunulabilecek düzeyde akademik makale taslağını (`.md` ve `.docx`) oluşturur.
+1. `search_verified_literature`: OpenAlex REST API, Crossref ve DergiPark üzerinden gerçek DOI'ye sahip hakemli makaleleri keşfeder; sonuçları Masaüstündeki `01_Literature_and_Bibliometrics/verified_literature.xlsx` dosyasına renkli göstergelerle kaydeder.
+2. `evaluate_paper_fit`: Aday çalışmaları 4 aşamalı deterministik formülle puanlar (Alan Uyumu %40, Metodolojik Özgünlük %30, Dergi Seviyesi %20, DOI Kapısı %10); sentetik yöntemleri tespit ederek eler.
+3. `bibliometric_gap_and_journal_report`: Metodoloji-tema çakışma matrisini çıkarır; SSCI ve Scopus Q1-Q4 dergileri hedefleyen 3 somut araştırma modeli kurgular; 300-DPI grafikler ve Word raporu üretir.
+4. `generate_deterministic_apa7`: Doğrulanmış DOI'lerden Türkçe akademik kurallara uygun ("vd.", "ve") metin içi atıfları ve APA 7 kaynakçasını oluşturur; `.bib` ve asılı girintili `.docx` dosyaları hazırlar.
+5. `fetch_empirical_dataset`: Dünya Bankası veya Yahoo Finance API'lerinden gerçek ampirik verileri indirir; eksik gözlemleri temizler; APA betimsel istatistik ve Pearson/Spearman korelasyon matrislerini üretir.
+6. `run_quantitative_or_qualitative_model`: EKK (sağlam standart hatalar, VIF, heteroskedastisite), Cox Sağkalım (Schoenfeld testi), Rastgele Orman (çapraz doğrulama, önem dereceleri) veya AHP-TOPSIS ($CR < 0.10$ tutarlılık şartı) modellerini yerel Python ortamında tahmin eder; çalıştırılabilir `.py` kodunu ve tanı grafiğini üretir.
+7. `export_academic_manuscript`: Literatürü, ampirik verileri, model sonuçlarını ve kaynakçayı birleştirerek doğrudan hakemli dergiye sunulabilecek düzeyde akademik makale taslağını (`.md` ve `.docx`) oluşturur.
 
 ---
 
 ## 💬 Verimli Araştırma İçin Örnek Prompt Yapısı (Türkçe)
 
-Token harcamasını en aza indirmek ve yapay zeka ile gereksiz sohbet turlarından kaçınmak için **Tek Aşamalı Otonom Prompt (Single-Anchor Autonomous Prompt)** yapısını kullanın. Bu yapı, asistanın araçları sırayla kendi kendine çalıştırmasını sağlar:
+Token tüketimini en aza indirmek ve gereksiz sohbet turlarından kaçınmak adına **Tek Aşamalı Otonom Prompt (Single-Anchor Autonomous Prompt)** yapısını kullanınız. Bu yaklaşım, asistanın araçları sırayla kendi kendine çalıştırmasını sağlar:
 
-### 🎯 Örnek Prompt 1: Anahtar Teslim Turnitin-Geçer (<%15) Ampirik Araştırma Makalesi
-Aşağıdaki promptu doğrudan Antigravity, Claude Desktop veya Cursor'a yapıştırarak sıfırdan eksiksiz bir makale hazırlatabilirsiniz:
+### 🎯 Örnek Prompt 1: Anahtar Teslim Ampirik Araştırma Makalesi
+Aşağıdaki yönergeyi doğrudan Antigravity, Claude Desktop veya Cursor çalışma ortamınıza yapıştırabilirsiniz:
 
 ```markdown
-Kıdemli bir Ekonometrist ve Akademik Araştırma Uzmanı olarak hareket et. ScholarDirect-MCP araçlarını ve Academic Research Guardian kurallarını kullanarak şu başlıkta yayına hazır, ampirik bir araştırma makalesi üret:
+Kıdemli bir Ekonometrist ve Akademik Araştırma Uzmanı sıfatıyla hareket et. ScholarDirect-MCP araçlarını ve Academic Research Guardian kurallarını kullanarak şu başlıkta yayına hazır, ampirik bir araştırma makalesi üret:
 "Gelişmekte Olan Piyasalarda FinTech Benimsenmesi ve Dijital Bankacılığın Finansal Kapsayıcılık ile Ekonomik Büyüme Üzerindeki Etkisi: Dinamik Panel Veri Analizi"
 
-Aşağıdaki iş akışını ara onay istemeden sırasıyla otonom olarak yürüt:
-1. LİTERATÜR: `search_verified_literature` ile OpenAlex ve DergiPark'tan doğrulanmış 15 hakemli makale keşfet (2018–2025, min 10 atıf).
+Aşağıdaki iş akışını ara onay istemeksizin sırasıyla otonom olarak yürüt:
+1. LİTERATÜR: `search_verified_literature` ile OpenAlex ve DergiPark'tan doğrulanmış 15 hakemli makale keşfet (2018–2025, asgari 10 atıf).
 2. UYGUNLUK DEĞERLENDİRMESİ: `evaluate_paper_fit` aracını hedef metodoloji "ekonometri panel veri ekk" olarak çalıştır; CORE_ANCHOR_PAPER statüsündeki temel kaynakları belirle.
-3. BOŞLUK ANALİZİ: `bibliometric_gap_and_journal_report` ile literatürdeki boşluğu tespit et; 300-DPI ısı haritasını üret ve SSCI Q1 / TR Dizin dergilerini hedefleyen 3 model tanımla.
+3. BOŞLUK ANALİZİ: `bibliometric_gap_and_journal_report` ile literatürdeki yöntemsel boşluğu tespit et; 300-DPI ısı haritasını üret ve SSCI Q1 / TR Dizin dergilerini hedefleyen 3 model tanımla.
 4. ATIFLAR: `generate_deterministic_apa7` ile Türkçe kurallara uygun ("vd.", "ve") APA 7 kaynakçasını ve .bib dosyasını Masaüstüne kaydet.
 5. AMPİRİK VERİ: `fetch_empirical_dataset` aracını source="worldbank", indicator="NY.GDP.MKTP.KD.ZG" (GSYİH Büyümesi), countries="TUR;EUU;USA" parametreleriyle çalıştırarak APA betimsel istatistik tablosunu hazırla.
 6. EKONOMETRİK MODELLEME: `run_quantitative_or_qualitative_model` ile model_type="ols_regression" modelini tahmin et; VIF, Breusch-Pagan, otokorelasyon ve sağlam standart hataları hesapla; 300-DPI tanı grafiğini üret.
 7. MAKALE YAZIMI: `export_academic_manuscript` ile tüm bulguları birleştirerek Masaüstündeki 05_Manuscript_Drafts klasörüne Word (.docx) ve Markdown (.md) olarak kaydet.
 
-Academic Research Guardian kurallarına kesinlikle uy: Monoton cümle uzunluklarından kaçın, cümle asimetrisi uygula, yasaklı yapay zeka kalıplarını ("buna karşın", "günümüz dünyasında", "önemli bir rol oynamaktadır") ASLA kullanma ve Turnitin AI benzerlik oranını <%15 seviyesinde tut.
+Veri gizliliği kuralına kesinlikle riayet et: Tüm veri setlerini ve taslakları yerel Masaüstü klasöründe tut, harici buluta veri sızdırma. Academic Research Guardian kurallarını işlet: Cümle uzunluğu asimetrisi sağla, yasaklı yapay zekâ kalıplarını ("buna karşın", "günümüz dünyasında", "önemli bir rol oynamaktadır") ASLA kullanma ve Turnitin AI benzerlik oranını <%15 seviyesinde tut.
 ```
 
 ### 🔬 Örnek Prompt 2: Hızlı Çok Kriterli Karar Verme Projesi (AHP-TOPSIS)
-YBS, İşletme ve Tedarik Zinciri alanında karar modelleri için:
 
 ```markdown
 ScholarDirect-MCP kullanarak "Surdurulebilir_Tedarikci_Secimi_CKKV" başlıklı bir çok kriterli karar verme analizi yürüt:
@@ -392,7 +396,7 @@ playwright install chromium
 ```
 
 ### 2. Google Antigravity İçin Otomatik Kurulum Komutu
-Google Antigravity kullanıyorsanız, aşağıdaki metni sohbet penceresine yapıştırmanız yeterlidir:
+Google Antigravity ortamında çalışıyorsanız, aşağıdaki talimatı sohbet penceresine iletmeniz yeterlidir:
 
 ````markdown
 ScholarDirect MCP sunucusunu Antigravity ortamıma otomatik olarak kur ve bağla:
@@ -412,7 +416,7 @@ ScholarDirect MCP sunucusunu Antigravity ortamıma otomatik olarak kur ve bağla
 
 ## 📄 Lisans
 
-Bu proje **MIT Lisansı** ile korunmaktadır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
+Bu proje **MIT Lisansı** ile lisanslanmıştır. Detaylar için `LICENSE` dosyasına bakabilirsiniz.
 
 ---
 
@@ -424,4 +428,4 @@ ScholarDirect-MCP araştırmalarınızda LLM token harcamanızı düşürüyor, 
 [![Patreon](https://img.shields.io/badge/Patreon-Destek%20Ol-F96854?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/netizen4_bit)
 
 **💼 Kurumsal ve Akademik Entegrasyon Danışmanlığı:**  
-Üniversite enstitünüz, araştırma merkeziniz veya ekibiniz için özel MCP sunucuları, otonom ekonometrik analiz hatları veya kurumsal yapay zeka mimarileri kurmak isterseniz [LinkedIn üzerinden iletişime geçebilirsiniz](https://www.linkedin.com/in/nihatkasim).
+Üniversite enstitünüz, araştırma merkeziniz veya kurumunuz için özel MCP sunucuları, otonom ekonometrik analiz hatları veya kurumsal yapay zekâ mimarileri tesis etmek isterseniz [LinkedIn üzerinden iletişime geçebilirsiniz](https://www.linkedin.com/in/nihatkasim).
