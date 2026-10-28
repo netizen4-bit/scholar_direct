@@ -2,7 +2,7 @@
 
 <p align="center">
   <b> Araştırmacılar İçin Yerel ve Güvenli Akademik Araştırma Asistanı</b><br>
-  <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, Dünya Bankası ve Academic Research Guardian ile Desteklenmektedir</i>
+  <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, Dünya Bankası ve Academic Research Guardian Destekli</i>
 </p>
 
 <p align="center">
@@ -18,7 +18,7 @@
 
 ---
 
-ScholarDirect-MCP v1.0, akademik çalışmalarını kolaylaştırmak için geliştirilmiş ücretsiz ve açık kaynaklı bir araştırma aracıdır. 
+ScholarDirect-MCP v1.0, akademik çalışmaları kolaylaştırmak için geliştirilmiş ücretsiz ve açık kaynaklı bir araştırma aracıdır. 
 
 Yapay zekâ modelleri (ChatGPT, Claude vb.) genellikle var olmayan makaleler ve çalışmayan linkler uydurur. Ayrıca veri analizleri yaparken sohbete sürekli tablo kopyalayıp yapıştırmak çok fazla token harcar ve maliyeti artırır. ScholarDirect-MCP, bu sorunları çözmek için geliştirilmiştir:
 
