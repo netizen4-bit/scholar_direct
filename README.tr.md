@@ -159,7 +159,7 @@ Veri gizliliği kuralına dikkat et: Tüm dosyalarımı yerel Masaüstü klasör
 * **Python (3.10+)**
 * **Git**
 * **Playwright Chromium** (`playwright install chromium`)
-* MCP uyumlu bir yapay zekâ istemcisi (**Antigravity CLI / IDE**, **Claude Desktop**, **Cursor**) veya yerel **Ollama** kurulumu.
+* MCP uyumlu bir yapay zekâ terminali (**Antigravity CLI / IDE**, **Claude Desktop**, **Cursor**) veya yerel **Ollama** kurulumu.
 
 ### 2. Elle (Manuel) Kurulum
 Repoyu klonlayın, Python bağımlılıklarını yükleyin ve Playwright tarayıcısını kurun:
@@ -191,7 +191,7 @@ Antigravity asistanı repoyu çekecek, `config.json` dosyasını yapılandıraca
 
 ---
 
-## 🔌 Yapay Zekâ İstemcinize Bağlama (MCP JSON Yapılandırması)
+## 🔌 Yapay Zekâ Terminalinize Bağlama (MCP JSON Yapılandırması)
 
 ScholarDirect sunucusunu `claude_desktop_config.json`, `config.json` veya Cursor ayarlarınıza ekleyin:
 
