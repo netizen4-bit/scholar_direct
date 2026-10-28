@@ -18,7 +18,7 @@
 
 ---
 
-ScholarDirect-MCP v1.0, lisans ve lisansüstü öğrencileri ile araştırmacıların akademik çalışmalarını kolaylaştırmak için geliştirilmiş ücretsiz ve açık kaynaklı bir araştırma aracıdır. 
+ScholarDirect-MCP v1.0, akademik çalışmalarını kolaylaştırmak için geliştirilmiş ücretsiz ve açık kaynaklı bir araştırma aracıdır. 
 
 Yapay zekâ modelleri (ChatGPT, Claude vb.) genellikle var olmayan makaleler ve çalışmayan linkler uydurur. Ayrıca veri analizleri yaparken sohbete sürekli tablo kopyalayıp yapıştırmak çok fazla token harcar ve maliyeti artırır. ScholarDirect-MCP, bu sorunları çözmek için geliştirilmiştir:
 
