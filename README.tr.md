@@ -1,7 +1,7 @@
 # ScholarDirect-MCP v1.0 🎓
 
 <p align="center">
-  <b> Araştırmacılar İçin Yerel ve Güvenli Akademik Araştırma Asistanı</b><br>
+  <b> Yerel ve Güvenli Akademik Araştırma Asistanı </b><br>
   <i>FastMCP, OpenAlex, Crossref, DergiPark, TR Dizin, Dünya Bankası ve Academic Research Guardian Destekli</i>
 </p>
 
