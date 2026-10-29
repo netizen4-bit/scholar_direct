@@ -131,7 +131,7 @@ Masaüstü/Academic_Research_Workspace/<Proje_Adı>_<Tarih>/
 
 ---
 
-## 💬 Başlangıç İçin Örnek Promptlar (Hemen Kopyalayıp Kullanın)
+## 💬 Başlangıç İçin Örnek Promptlar
 
 Yapay zekâ asistanınıza (Antigravity, Claude Desktop veya Cursor) tek bir açık yönerge vererek tüm süreci kolayca çalıştırabilirsiniz:
 
