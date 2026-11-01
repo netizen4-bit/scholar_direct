@@ -35,44 +35,12 @@ import httpx
 from bs4 import BeautifulSoup
 from fastmcp import FastMCP
 
-# Scientific & Econometric Stack
-import numpy as np
-import pandas as pd
-import scipy.stats as stats
-import statsmodels.api as sm
-from statsmodels.stats.outliers_influence import variance_inflation_factor
-from statsmodels.stats.diagnostic import het_breuschpagan
-from statsmodels.stats.stattools import durbin_watson, jarque_bera
-
-# Survival Analysis
-try:
-    from lifelines import CoxPHFitter, KaplanMeierFitter
-    HAS_LIFELINES = True
-except ImportError:
-    HAS_LIFELINES = False
-
-# Machine Learning Stack
-try:
-    from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor, ExtraTreesClassifier
-    from sklearn.model_selection import train_test_split, cross_val_score
-    from sklearn.metrics import roc_auc_score, f1_score, precision_score, recall_score, mean_squared_error, r2_score
-    from sklearn.preprocessing import StandardScaler
-    HAS_SKLEARN = True
-except ImportError:
-    HAS_SKLEARN = False
-
-# Visualization Stack (Agg headless backend)
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-# Financial & Market Data
-try:
-    import yfinance as yf
-    HAS_YFINANCE = True
-except ImportError:
-    HAS_YFINANCE = False
+# Heavy scientific & econometric libraries (numpy, pandas, scipy, statsmodels,
+# lifelines, sklearn, matplotlib, seaborn, yfinance) are imported lazily inside
+# the specific tools that require them to ensure ultra-fast cold startup (<1s).
+HAS_LIFELINES = False
+HAS_SKLEARN = False
+HAS_YFINANCE = False
 
 # Office Document Generation Stack
 try:
@@ -1205,6 +1173,13 @@ async def bibliometric_gap_and_journal_report(
     targeting SSCI and Scopus Q1-Q4 journals, generates 2 publication-ready 300-DPI charts
     (citation_trend_by_year.png and methodology_gap_heatmap.png), and exports an executive Word report.
     """
+    import numpy as np
+    import pandas as pd
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+
     subdirs = resolve_research_workspace(project_name)
 
     # Load evaluated or verified literature
@@ -1538,6 +1513,10 @@ async def fetch_empirical_dataset(
       - 'local_file': Ingests and validates a user's CSV/XLSX file from disk.
     Automatically computes an APA Descriptive Statistics & Correlation Matrix and saves CSV/Excel/Word assets.
     """
+    import numpy as np
+    import pandas as pd
+    import scipy.stats as stats
+
     subdirs = resolve_research_workspace(project_name)
     df = pd.DataFrame()
     dataset_description = ""
@@ -1574,6 +1553,11 @@ async def fetch_empirical_dataset(
 
     # 2. Yahoo Finance Ingestion
     elif src_lower == "yfinance":
+        try:
+            import yfinance as yf
+            HAS_YFINANCE = True
+        except ImportError:
+            HAS_YFINANCE = False
         if not HAS_YFINANCE:
             return "❌ Error: yfinance library is required for financial time-series ingestion."
         tickers = [t.strip() for t in countries_or_tickers.replace(";", " ").replace(",", " ").split() if t.strip()]
@@ -1711,6 +1695,12 @@ async def run_quantitative_or_qualitative_model(
       - 'delphi_kendall_cld': Delphi expert concordance (Kendall's W) & Causal Loop Diagram loop polarity.
     Generates standalone reproducible Python scripts in 03_Models_and_Scripts/ and 300-DPI charts.
     """
+    import numpy as np
+    import pandas as pd
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
     subdirs = resolve_research_workspace(project_name)
     options = options or {}
 
@@ -1737,6 +1727,11 @@ async def run_quantitative_or_qualitative_model(
     # 1. OLS REGRESSION
     # -----------------------------------------------------------------------
     if model_type_clean == "ols_regression":
+        import statsmodels.api as sm
+        from statsmodels.stats.outliers_influence import variance_inflation_factor
+        from statsmodels.stats.diagnostic import het_breuschpagan
+        from statsmodels.stats.stattools import durbin_watson, jarque_bera
+
         req_cols = [dependent_var] + independent_vars
         model_df = df[req_cols].dropna()
         if len(model_df) < len(independent_vars) + 5:
@@ -1818,6 +1813,12 @@ async def run_quantitative_or_qualitative_model(
     # 2. SURVIVAL ANALYSIS (COX PROPORTIONAL HAZARDS)
     # -----------------------------------------------------------------------
     elif model_type_clean == "survival_cox":
+        try:
+            from lifelines import CoxPHFitter, KaplanMeierFitter
+            HAS_LIFELINES = True
+        except ImportError:
+            HAS_LIFELINES = False
+
         if not HAS_LIFELINES:
             return "❌ Error: `lifelines` library is required for survival analysis."
 
@@ -1881,6 +1882,15 @@ async def run_quantitative_or_qualitative_model(
     # 3. MACHINE LEARNING & XAI
     # -----------------------------------------------------------------------
     elif model_type_clean == "machine_learning":
+        try:
+            from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor, ExtraTreesClassifier
+            from sklearn.model_selection import train_test_split, cross_val_score
+            from sklearn.metrics import roc_auc_score, f1_score, precision_score, recall_score, mean_squared_error, r2_score
+            from sklearn.preprocessing import StandardScaler
+            HAS_SKLEARN = True
+        except ImportError:
+            HAS_SKLEARN = False
+
         if not HAS_SKLEARN:
             return "❌ Error: `scikit-learn` is required for machine learning execution."
 
